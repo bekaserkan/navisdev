@@ -6,6 +6,7 @@ import design3 from "../../img/design (2).svg"
 import design4 from "../../img/design (3).svg"
 import design5 from "../../img/design (5).svg"
 import design6 from "../../img/design (4).svg"
+import arrow from "../../img/arrow.svg"
 
 const Services = () => {
     return (

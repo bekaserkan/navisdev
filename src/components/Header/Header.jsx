@@ -13,7 +13,7 @@ const Header = () => {
                 <NavLink to="/" className="page">Отзывы</NavLink>
                 <NavLink to="/" className="page">Контакты</NavLink>
             </div>
-            <NavLink to="/" className="cons">Консультация</NavLink>
+            <NavLink to="/" className="button_form cons">Консультация</NavLink>
         </div>
     )
 }

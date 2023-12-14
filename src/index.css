@@ -65,6 +65,7 @@
 
 :root {
     --orange: linear-gradient(269deg, #EE3B3B 62.83%, rgba(249, 191, 78, 0.80) 129.43%);
+    --orangeH: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), linear-gradient(269deg, #EE3B3B 62.83%, rgba(249, 191, 78, 0.80) 129.43%);
     --red: #C35656;
     --gray: #B5B5B5;
     --white: #fff;

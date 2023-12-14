@@ -12,8 +12,8 @@ const Nav = () => {
                 Заказывайте у нас проекты для электронной коммерции, и будьте лучшими в вашей сфере
             </p>
             <div className="btns">
-                <button className='bay'>Заказать</button>
-                <button className='cons'>Консультация</button>
+                <button className='button_form bay'>Заказать</button>
+                <button className='button_form cons'>Консультация</button>
             </div>
             <div className="clients">
                 <div>
