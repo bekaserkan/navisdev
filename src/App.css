@@ -14,6 +14,29 @@
     transition: .3s ease;
 }
 
+.button_form_two {
+    border: none;
+    font-size: 14px;
+    width: 150px;
+    height: 50px;
+    font-weight: 400;
+    color: var(--white);
+    background: var(--orange);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: .3s ease;
+    border: 1px solid var(--red);
+    background: none;
+}
+
 .button_form:hover {
     background: var(--orangeH);
+}
+
+.button_form_two:hover {
+    background: var(--red);
 }

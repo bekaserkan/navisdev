@@ -9,7 +9,7 @@ const Header = () => {
             <div className="pages">
                 <NavLink to="/" className="page">Направления</NavLink>
                 <NavLink to="/" className="page">Проекты</NavLink>
-                <NavLink to="/" className="page">Партнеры</NavLink>
+                <NavLink to="/" className="page">О нас</NavLink>
                 <NavLink to="/" className="page">Отзывы</NavLink>
                 <NavLink to="/" className="page">Контакты</NavLink>
             </div>
