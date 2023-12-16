@@ -3,6 +3,7 @@ import "./Projects.css"
 import arrow from "../../img/arrow_white.svg"
 import projact from "../../img/photo_project.svg"
 import projact1 from "../../img/photo_project (1).svg"
+import { GoArrowUpRight } from "react-icons/go";
 
 const Projects = () => {
     return (
@@ -18,7 +19,7 @@ const Projects = () => {
                     </div>
                     <div className='flex'>
                         <p>Сайт для поиска и покупки авиабилетов</p>
-                        <img src={arrow} alt="" />
+                        <GoArrowUpRight className='icon' />
                     </div>
                 </div>
                 <div className="projects_box">
@@ -27,7 +28,7 @@ const Projects = () => {
                     </div>
                     <div className='flex'>
                         <p>Сайт для поиска и покупки авиабилетов</p>
-                        <img src={arrow} alt="" />
+                        <GoArrowUpRight className='icon' />
                     </div>
                 </div>
                 <div className="projects_box">
@@ -36,7 +37,7 @@ const Projects = () => {
                     </div>
                     <div className='flex'>
                         <p>Сайт для поиска и покупки авиабилетов</p>
-                        <img src={arrow} alt="" />
+                        <GoArrowUpRight className='icon' />
                     </div>
                 </div>
                 <div className="projects_box">
@@ -45,7 +46,7 @@ const Projects = () => {
                     </div>
                     <div className='flex'>
                         <p>Сайт для поиска и покупки авиабилетов</p>
-                        <img src={arrow} alt="" />
+                        <GoArrowUpRight className='icon' />
                     </div>
                 </div>
                 <div className="projects_box">
@@ -54,7 +55,7 @@ const Projects = () => {
                     </div>
                     <div className='flex'>
                         <p>Сайт для поиска и покупки авиабилетов</p>
-                        <img src={arrow} alt="" />
+                        <GoArrowUpRight className='icon' />
                     </div>
                 </div>
                 <div className="projects_box">
@@ -63,7 +64,7 @@ const Projects = () => {
                     </div>
                     <div className='flex'>
                         <p>Сайт для поиска и покупки авиабилетов</p>
-                        <img src={arrow} alt="" />
+                        <GoArrowUpRight className='icon' />
                     </div>
                 </div>
             </div>

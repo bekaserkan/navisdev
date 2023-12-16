@@ -1,0 +1,49 @@
+.contact {
+    padding-top: 80px;
+    width: 100%;
+}
+
+.contact .contact_title {
+    margin-top: 50px;
+    font-size: 30px;
+    font-weight: 400;
+    color: var(--white);
+}
+
+.contact .address_text.d {
+    color: var(--red);
+}
+
+.contact .address {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.contact .address_text {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--gray);
+}
+
+.contact .image_box {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.contact .margin {
+    width: 100%;
+    height: 80px;
+}
+
+.contact .map {
+    margin-top: 40px;
+    width: 100%;
+    height: 400px;
+}

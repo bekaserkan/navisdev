@@ -1,0 +1,40 @@
+.consultation {
+    margin-top: 80px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.04);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.consultation .block {
+    padding: 68px 92px;
+}
+
+.consultation .form {
+    margin-top: 40px;
+}
+
+.consultation .form .button_form {
+    margin-top: 8px;
+    width: 100%;
+}
+
+.consultation .form .input_form {
+    outline: none;
+    padding: 10px 16px;
+    margin-bottom: 18px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--white);
+    border-radius: 50px;
+    background: transparent;
+    border-radius: 50px;
+    border: 1px solid var(--gray, #B5B5B5);
+}
+
+.consultation .form .input_form::placeholder {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--gray);
+}

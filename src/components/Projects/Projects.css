@@ -39,14 +39,24 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 }
 
 .projects .projects_box p {
+    position: relative;
     font-size: 16px;
     font-weight: 400;
     color: var(--white);
     transition: .3s ease;
-    position: relative;
+}
+
+.projects .projects_box .icon {
+    font-size: 24px;
+    color: var(--white);
+}
+
+.projects .projects_box:hover .icon {
+    color: var(--red);
 }
 
 .projects .projects_box:hover p {
@@ -58,23 +68,23 @@
     transform: scale(1.15);
 }
 
-.projects .projects_box:hover::before {
+.projects .projects_box:hover .flex::before {
     transform: scaleX(1);
     transform-origin: end;
     transition: transform 0.3s;
 }
 
-.projects .projects_box:hover::before {
+.projects .projects_box .flex::before {
     content: "";
     width: 100%;
-    height: 2px;
+    height: 1px;
     border-radius: 50px;
     background: var(--red);
     position: absolute;
-    left: 0;
-    bottom: 0;
+    right: 0;
+    bottom: 1px;
     transform: scaleX(0);
-    transform-origin: start;
+    transform-origin: end;
     transition: transform 0.5s;
 }
 

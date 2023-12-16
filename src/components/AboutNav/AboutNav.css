@@ -1,0 +1,37 @@
+.about_nav {
+    width: 100%;
+    padding-top: 110px;
+    padding-bottom: 80px;
+}
+
+.about_nav img {
+    width: 100%;
+    height: 400px;
+}
+
+.about_nav .clients {
+    margin-top: 70px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+}
+
+.about_nav .clients div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about_nav .clients .client {
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--red);
+}
+
+.about_nav .clients p {
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--gray);
+}

@@ -7,11 +7,11 @@ const Header = () => {
         <div className='header'>
             <NavLink to="/" className="title">Navisdev</NavLink>
             <div className="pages">
-                <NavLink to="/" className="page">Направления</NavLink>
-                <NavLink to="/" className="page">Проекты</NavLink>
-                <NavLink to="/" className="page">О нас</NavLink>
-                <NavLink to="/" className="page">Отзывы</NavLink>
-                <NavLink to="/" className="page">Контакты</NavLink>
+                <NavLink to="/directions" className="page">Направления</NavLink>
+                <NavLink to="/projects" className="page">Проекты</NavLink>
+                <NavLink to="/about" className="page">О нас</NavLink>
+                <NavLink to="/review" className="page">Отзывы</NavLink>
+                <NavLink to="/contact" className="page">Контакты</NavLink>
             </div>
             <NavLink to="/" className="button_form cons">Консультация</NavLink>
         </div>

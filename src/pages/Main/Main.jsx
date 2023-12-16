@@ -8,6 +8,7 @@ import Projects from '../../components/Projects/Projects'
 import Use from '../../components/Use/Use'
 import Review from '../../components/Review/Review'
 import IconCompony from '../../components/IconCompony/IconCompony'
+import Consultation from '../../components/Consultation/Consultation'
 
 const Main = () => {
   return (
@@ -20,6 +21,7 @@ const Main = () => {
       <Use />
       <Review />
       <IconCompony />
+      <Consultation />
     </div>
   )
 }
