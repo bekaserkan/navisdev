@@ -5,6 +5,7 @@ import AboutComp from '../../components/AboutComp/AboutComp'
 import Work from '../../components/Work/Work'
 import Use from '../../components/Use/Use'
 import Consultation from '../../components/Consultation/Consultation'
+import Gallery from '../../components/Gallery/Gallery'
 
 const About = () => {
     return (
@@ -12,6 +13,7 @@ const About = () => {
             <AboutNav />
             <AboutComp />
             <Work />
+            <Gallery />
             <Use />
             <Consultation />
         </div>
