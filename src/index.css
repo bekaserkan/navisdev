@@ -71,6 +71,33 @@
     --white: #fff;
 }
 
+.not_found {
+    width: 100%;
+    padding-top: 250px;
+    padding-bottom: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.not_found .not_found_text {
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--white);
+}
+
+.not_found .not_found_text .not {
+    font-size: 80px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--orange);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 *::selection {
     background: var(--red);
 }

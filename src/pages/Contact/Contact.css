@@ -3,6 +3,21 @@
     width: 100%;
 }
 
+.contact .title {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 40px;
+    font-weight: 500;
+    color: var(--white);
+}
+
+.contact .title_text {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--red);
+}
+
 .contact .contact_title {
     margin-top: 50px;
     font-size: 26px;

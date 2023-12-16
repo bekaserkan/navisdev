@@ -6,15 +6,17 @@ import design3 from "../../img/design (2).svg"
 import design4 from "../../img/design (3).svg"
 import design5 from "../../img/design (5).svg"
 import design6 from "../../img/design (4).svg"
-import arrow from "../../img/arrow.svg"
+import { useNavigate } from 'react-router-dom'
 
 const Services = () => {
+    const navigate = useNavigate()
+
     return (
         <div className='services'>
             <p className='title_text'>Предоставляем</p>
             <p className='title'>Наши услуги</p>
             <div className="services_contant">
-                <div className="services_block">
+                <div onClick={() => navigate("/design")} className="services_block">
                     <img src={design1} alt="" />
                     <h4 className='services_title'>UX/UI дизайн</h4>
                     <p><div className="circle"></div> Анализ конкурентов</p>
