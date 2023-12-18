@@ -57,3 +57,47 @@
     font-weight: 400;
     color: var(--gray);
 }
+
+@media (max-width: 1000px) {
+    .services .services_contant {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .services .services_contant {
+        margin-top: 20px;
+    }
+
+    .services {
+        padding: 40px 0;
+    }
+
+    .services .services_contant {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .services .services_block {
+        padding: 24px;
+    }
+
+    .services .services_title {
+        margin-top: 16px;
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--white);
+        margin-bottom: 16px;
+    }
+
+    .services .services_block p {
+        margin-top: 6px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 14px;
+        font-weight: 400;
+        color: var(--gray);
+    }
+}

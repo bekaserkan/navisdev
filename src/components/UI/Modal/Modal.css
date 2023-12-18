@@ -1,0 +1,134 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1111;
+    animation: modal .5s ease;
+}
+
+@keyframes modal {
+    0% {
+        top: 200px;
+    }
+
+    100% {
+        top: 0;
+    }
+}
+
+.modal .modal_not {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    flex-shrink: 0;
+    background: rgba(124, 122, 122, 0.20);
+    backdrop-filter: blur(10px);
+    animation: focus 1s ease;
+}
+
+@keyframes focus {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.modal .modal_container {
+    position: absolute;
+    max-width: 520px;
+    width: 100%;
+    min-height: 0;
+    padding: 80px 60px;
+    background: var(--fon, #080010);
+    box-shadow: 9px 12px 34px 0px rgba(209, 35, 35, 0.10), 38px 49px 62px 0px rgba(209, 35, 35, 0.09), 85px 110px 83px 0px rgba(209, 35, 35, 0.05), 151px 196px 99px 0px rgba(209, 35, 35, 0.01), 236px 306px 108px 0px rgba(209, 35, 35, 0.00);
+}
+
+.modal .form {
+    margin-top: 40px;
+    width: 100%;
+}
+
+.modal .input_form {
+    outline: none;
+    padding: 16px 20px;
+    margin-bottom: 18px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--white);
+    border-radius: 50px;
+    background: transparent;
+    border-radius: 50px;
+    border: 1px solid var(--gray, #B5B5B5);
+}
+
+.modal .input_form::placeholder {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--gray);
+}
+
+.modal .button_form {
+    width: 100%;
+}
+
+.modal .close {
+    cursor: pointer;
+    top: 30px;
+    right: 30px;
+    position: absolute;
+}
+
+.modal .title {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 26px;
+    font-weight: 500;
+    color: var(--white);
+}
+
+.modal .title_text {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--red);
+}
+
+.modal .modal_title {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 26px;
+    font-weight: 500;
+    color: var(--white);
+}
+
+.modal .modal_text {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--white);
+}
+
+.modal .check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal .check img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    object-position: center;
+}

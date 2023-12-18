@@ -6,6 +6,7 @@ import phone_number from "../../img/phone_number.svg"
 import icon1 from "../../img/iocn_footer1.svg"
 import icon2 from "../../img/iocn_footer2.svg"
 import icon3 from "../../img/iocn_footer3.svg"
+import { NavLink } from 'react-router-dom'
 
 const Footer = () => {
     return (
@@ -25,11 +26,11 @@ const Footer = () => {
                             Компания
                         </p>
                         <div className="text_box">
-                            <p className='text'>Направления</p>
-                            <p className='text'>Проекты</p>
-                            <p className='text'>Партенеры</p>
-                            <p className='text'>Отзывы</p>
-                            <p className='text'>Контакты</p>
+                            <NavLink to="" className='text'>Направления</NavLink>
+                            <NavLink to="" className='text'>Проекты</NavLink>
+                            <NavLink to="" className='text'>Партенеры</NavLink>
+                            <NavLink to="" className='text'>Отзывы</NavLink>
+                            <NavLink to="" className='text'>Контакты</NavLink>
                         </div>
                     </div>
                     <div className="footer_box">

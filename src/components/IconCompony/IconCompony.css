@@ -6,3 +6,13 @@
     align-items: center;
     justify-content: space-between;
 }
+
+@media (max-width: 600px) {
+    .icon_compony {
+        margin: 0 auto;
+        padding: 40px 0;
+        width: 100%;
+        display: flex;
+        overflow-x: hidden;
+    }
+}

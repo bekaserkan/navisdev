@@ -6,12 +6,16 @@
     gap: 45px;
 }
 
-.about_comp .title,
-.about_comp .title_text {
-    text-align: start;
+.about_comp .image {
+    width: 100%;
 }
 
-.about_comp .about{
+.about_comp .title,
+.about_comp .title_text {
+    text-align: start !important;
+}
+
+.about_comp .about {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -22,4 +26,57 @@
     font-size: 20px;
     font-weight: 400;
     color: var(---, #E1E1E1);
+}
+
+.title_box {
+    display: none;
+}
+
+@media (max-width: 800px) {
+    .about_comp {
+        padding-top: 20px;
+        padding-bottom: 40px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .about_comp .title,
+    .about_comp .title_text {
+        text-align: start !important;
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .title_box {
+        margin-top: 40px;
+        display: block;
+    }
+
+    .services .services_block {
+        padding: 24px;
+    }
+
+    .services .services_title {
+        margin-top: 16px;
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--white);
+        margin-bottom: 16px;
+    }
+
+    .about_comp .about_text {
+        width: 100%;
+        font-size: 14px;
+        font-weight: 400;
+        color: var(---, #E1E1E1);
+    }
+
+    .about_comp .button_form_two {
+        margin: 0 auto;
+        margin-top: 20px;
+        padding: 10px;
+    }
+
 }

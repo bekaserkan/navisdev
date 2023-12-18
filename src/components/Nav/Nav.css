@@ -52,7 +52,7 @@
 }
 
 .nav .btns .cons:hover {
-    background: var(--orange);
+    background: var(--red);
 }
 
 .nav .clients {

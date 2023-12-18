@@ -92,3 +92,26 @@
     margin: 0 auto;
     margin-top: 50px;
 }
+
+@media (max-width: 1000px) {
+    .projects .projects_wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .projects {
+        padding: 40px 0;
+    }
+
+    .projects .projects_wrapper {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .projects .projects_box p {
+        font-size: 14px;
+    }
+}

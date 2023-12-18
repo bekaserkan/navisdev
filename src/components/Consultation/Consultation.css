@@ -38,3 +38,27 @@
     font-weight: 400;
     color: var(--gray);
 }
+
+@media (max-width: 600px) {
+    .consultation {
+        margin-top: 40px;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.04);
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .consultation img {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .consultation .block {
+        padding: 16px;
+    }
+
+    .consultation .form {
+        margin: 0;
+    }
+
+}

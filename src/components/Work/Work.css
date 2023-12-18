@@ -8,10 +8,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
     gap: 40px;
 }
 
 .work .work_box {
+    width: 280px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -44,4 +46,16 @@
     font-size: 16px;
     font-weight: 400;
     color: var(--gray);
+}
+
+
+@media (max-width: 600px) {
+    .work {
+        padding: 40px 0;
+    }
+
+    .work .work_contant {
+        display: flex;
+        justify-content: center;
+    }
 }

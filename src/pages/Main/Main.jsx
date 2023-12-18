@@ -10,10 +10,10 @@ import Review from '../../components/Review/Review'
 import IconCompony from '../../components/IconCompony/IconCompony'
 import Consultation from '../../components/Consultation/Consultation'
 
-const Main = () => {
+const Main = ({ setModal }) => {
   return (
     <div className='main'>
-      <Nav />
+      <Nav setModal={setModal} />
       <Services />
       <AboutComp />
       <Work />

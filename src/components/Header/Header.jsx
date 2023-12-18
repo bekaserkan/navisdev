@@ -2,7 +2,7 @@ import React from 'react'
 import "./Header.css"
 import { NavLink } from 'react-router-dom'
 
-const Header = () => {
+const Header = ({ setModal }) => {
     return (
         <div className='header'>
             <NavLink to="/" className="title">Navisdev</NavLink>
@@ -13,7 +13,7 @@ const Header = () => {
                 <NavLink to="/review" className="page">Отзывы</NavLink>
                 <NavLink to="/contact" className="page">Контакты</NavLink>
             </div>
-            <NavLink to="/" className="button_form cons">Консультация</NavLink>
+            <button onClick={() => setModal(true)} className="button_form cons">Консультация</button>
         </div>
     )
 }

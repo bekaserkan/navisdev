@@ -57,3 +57,53 @@
     top: -25px;
     right: 40px;
 }
+
+@media (max-width: 1000px) {
+    .review .review_contant {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .review {
+        padding: 40px 0;
+    }
+
+    .review .review_contant {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .review .review_box {
+        padding: 24px;
+    }
+
+
+    .review .quote {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: -15px;
+        right: 40px;
+    }
+
+    .review .review_box .review_text {
+        margin-top: 24px;
+        font-size: 12px;
+        font-weight: 400;
+        color: var(--gray);
+    }
+
+    .review .review_title {
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--white);
+    }
+
+    .review .review_name {
+        font-size: 10px;
+        font-weight: 300;
+        color: var(--gray);
+    }
+}

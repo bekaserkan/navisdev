@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Nav.css"
 
-const Nav = () => {
+const Nav = ({ setModal }) => {
     return (
         <div className='nav'>
             <span className='it_compony'>
@@ -12,8 +12,8 @@ const Nav = () => {
                 Заказывайте у нас проекты для электронной коммерции, и будьте лучшими в вашей сфере
             </p>
             <div className="btns">
-                <button className='button_form bay'>Заказать</button>
-                <button className='button_form cons'>Консультация</button>
+                <button onClick={() => setModal(true)} className='button_form bay'>Заказать</button>
+                <button onClick={() => setModal(true)} className='button_form cons'>Консультация</button>
             </div>
             <div className="clients">
                 <div>
