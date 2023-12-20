@@ -6,16 +6,19 @@
 
 .about_nav img {
     width: 100%;
-    height: 400px;
+    min-height: 160px;
+    max-height: 400px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .about_nav .clients {
+    margin: 0 auto;
     margin-top: 70px;
-    width: 100%;
-    display: flex;
-    align-items: center;
+    width: 70%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     justify-content: center;
-    gap: 70px;
 }
 
 .about_nav .clients div {
@@ -25,13 +28,39 @@
 }
 
 .about_nav .clients .client {
-    font-size: 40px;
-    font-weight: 600;
-    color: var(--red);
+    font-size: 35px;
+    font-weight: 400;
+    color: var(--white);
 }
 
 .about_nav .clients p {
     font-size: 20px;
     font-weight: 400;
     color: var(--gray);
+}
+
+@media (max-width: 600px) {
+    .about_nav {
+        padding-bottom: 0;
+    }
+
+    .about_nav .clients {
+        margin: 0 auto;
+        margin-top: 80px;
+        margin-bottom: 100px;
+        width: 80%;
+        gap: 15px;
+    }
+
+    .about_nav .clients .client {
+        font-size: 26px;
+        font-weight: 600;
+        color: var(--white);
+    }
+
+    .about_nav .clients p {
+        font-size: 14px;
+        font-weight: 400;
+        color: var(--gray);
+    }
 }

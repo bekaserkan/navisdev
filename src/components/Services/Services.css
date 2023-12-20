@@ -58,6 +58,29 @@
     color: var(--gray);
 }
 
+.services .clients {
+    display: none;
+}
+
+.services .clients div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.services .clients .client {
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--white);
+}
+
+.services .clients p {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--gray);
+}
+
 @media (max-width: 1000px) {
     .services .services_contant {
         display: grid;
@@ -99,5 +122,12 @@
         font-size: 14px;
         font-weight: 400;
         color: var(--gray);
+    }
+
+    .services .clients {
+        margin-top: 100px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-content: center;
     }
 }

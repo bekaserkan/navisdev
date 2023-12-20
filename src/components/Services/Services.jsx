@@ -71,6 +71,20 @@ const Services = () => {
                     <p><div className="circle"></div> Подробка иконок и иллюстраций</p>
                 </div>
             </div>
+            <div className="clients">
+                <div>
+                    <span className='client'>98+</span>
+                    <p>Довольных клиентов</p>
+                </div>
+                <div>
+                    <span className='client'>100+</span>
+                    <p>Завершенных проектов</p>
+                </div>
+                <div>
+                    <span className='client'>25+</span>
+                    <p>Сотрудников</p>
+                </div>
+            </div>
         </div>
     )
 }

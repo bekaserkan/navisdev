@@ -1,15 +1,17 @@
 .header {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    max-width: 1280px;
-    width: 90%;
+    width: 100%;
+    padding: 0 5%;
     height: 90px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background: transparent;
+    background: #0A0A0B;
+    z-index: 9999;
 }
 
 .header a {
@@ -66,4 +68,127 @@
 
 .header .cons {
     height: 45px;
+}
+
+.header .burger {
+    display: none;
+}
+
+.header .menu {
+    position: fixed;
+}
+
+.header .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    z-index: 1111;
+}
+
+.header .menu_not {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    flex-shrink: 0;
+    background: rgba(124, 122, 122, 0.20);
+    backdrop-filter: blur(10px);
+    animation: focus .4s ease;
+}
+
+@keyframes focus {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.header .menu_container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70%;
+    height: 100vh;
+    background: #0A0A0B;
+    padding: 70px 20px;
+    z-index: 999;
+    animation: menuModal .5s ease;
+}
+
+@keyframes menuModal {
+    0% {
+        right: -200px;
+    }
+
+    100% {
+        right: 0;
+    }
+}
+
+.header .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+@media (max-width: 600px) {
+    .header .title {
+        font-size: 18px;
+    }
+
+    .header .button_form.cons,
+    .header .pages {
+        display: none;
+    }
+
+    .header .burger {
+        display: flex;
+        flex-direction: column;
+        width: 30px;
+        gap: 7px;
+    }
+
+    .header .burger div {
+        width: 100%;
+        height: 2px;
+        border-radius: 50px;
+        background: var(--white);
+    }
+
+    .header .page {
+        text-align: start;
+        padding: 0;
+        height: 30px;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .header .page:hover::before {
+        transform: scaleX(1);
+        transform-origin: center;
+        transition: transform 0.3s;
+    }
+
+    .header .page::before {
+        content: "";
+        width: 100%;
+        height: 2px;
+        border-radius: 50px;
+        background: var(--red);
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform 0.5s;
+    }
 }
