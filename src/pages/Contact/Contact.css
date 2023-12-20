@@ -110,3 +110,20 @@
         color: var(--gray);
     }
 }
+
+@media (max-width: 600px) {
+    .contact .title {
+        text-align: center;
+        margin-top: 10px;
+        font-size: 20px;
+        font-weight: 500;
+        color: var(--white);
+    }
+
+    .contact .title_text {
+        text-align: center;
+        font-size: 10px;
+        font-weight: 400;
+        color: var(--red);
+    }
+}

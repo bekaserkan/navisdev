@@ -23,3 +23,39 @@
     object-fit: cover;
     object-position: center;
 }
+
+.gallery .image_block {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .gallery .gallery_box_one {
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .gallery img {
+        height: 240px;
+    }
+
+    .gallery .gallery_box_two {
+        margin-top: 10px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    .gallery .gallery_box_two img {
+        height: 160px;
+    }
+
+    .gallery .image_none {
+        display: none;
+    }
+
+    .gallery .image_block {
+        margin-top: 10px;
+        display: block;
+    }
+}

@@ -7,8 +7,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1111;
     animation: modal .5s ease;
+    z-index: 99999999;
 }
 
 @keyframes modal {
@@ -49,7 +49,7 @@
     width: 100%;
     min-height: 0;
     padding: 80px 60px;
-    background: var(--fon, #080010);
+    background: #080010;
     box-shadow: 9px 12px 34px 0px rgba(209, 35, 35, 0.10), 38px 49px 62px 0px rgba(209, 35, 35, 0.09), 85px 110px 83px 0px rgba(209, 35, 35, 0.05), 151px 196px 99px 0px rgba(209, 35, 35, 0.01), 236px 306px 108px 0px rgba(209, 35, 35, 0.00);
 }
 
@@ -131,4 +131,62 @@
     height: 60px;
     object-fit: cover;
     object-position: center;
+}
+
+@media (max-width: 600px) {
+    .modal .modal_container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .modal .form {
+        margin-top: 20px;
+    }
+
+    .modal .button_form,
+    .modal .input_form {
+        height: 45px;
+    }
+
+    .modal .title {
+        margin: 0 auto;
+        width: 80%;
+        margin-top: 10px;
+        font-size: 20px;
+    }
+
+    .modal .title_text {
+        font-size: 10px;
+    }
+
+    .modal .modal_title {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 20px;
+        font-weight: 500;
+        color: var(--white);
+    }
+
+    .modal .modal_text {
+        margin-top: 10px;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 300;
+        color: var(--white);
+        margin-bottom: 10px;
+    }
+
+    .modal .check {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .modal .check img {
+        margin-top: 10px;
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        object-position: center;
+    }
 }

@@ -62,4 +62,8 @@
         margin-top: 20px;
     }
 
+    .consultation .button_form,
+    .consultation .input_form {
+        height: 45px;
+    }
 }

@@ -18,8 +18,9 @@ const Gallery = () => {
             <div className="gallery_box_two">
                 <img src={photo} alt="" />
                 <img src={photo} alt="" />
-                <img src={photo} alt="" />
+                <img className='image_none' src={photo} alt="" />
             </div>
+            <img className='image_block' src={photo} alt="" />
         </div>
     )
 }
