@@ -26,11 +26,11 @@ const Footer = () => {
                             Компания
                         </p>
                         <div className="text_box">
-                            <NavLink to="" className='text'>Направления</NavLink>
-                            <NavLink to="" className='text'>Проекты</NavLink>
-                            <NavLink to="" className='text'>Партенеры</NavLink>
-                            <NavLink to="" className='text'>Отзывы</NavLink>
-                            <NavLink to="" className='text'>Контакты</NavLink>
+                            <NavLink to="/directions" className='text'>Направления</NavLink>
+                            <NavLink to="/projects" className='text'>Проекты</NavLink>
+                            <NavLink to="/about" className='text'>Партенеры</NavLink>
+                            <NavLink to="/review" className='text'>Отзывы</NavLink>
+                            <NavLink to="/contact" className='text'>Контакты</NavLink>
                         </div>
                     </div>
                     <div className="footer_box">
