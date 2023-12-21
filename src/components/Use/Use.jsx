@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Use.css"
 import icon1 from "../../img/icon.svg"
 import icon2 from "../../img/icon (1).svg"
@@ -15,8 +15,25 @@ import icon12 from "../../img/icon (14).svg"
 import icon13 from "../../img/icon (11).svg"
 import icon14 from "../../img/icon (12).svg"
 import icon15 from "../../img/icon (13).svg"
+import axios from 'axios'
+import { url } from '../../Api'
 
 const Use = () => {
+    const [useData, setUseData] = useState([])
+    const [loading, setLoading] = useState(false)
+
+    useEffect(() => {
+        axios.get(url + "/App/")
+            .then((response) => {
+                setUseData(response.data)
+                setLoading(true)
+            })
+            .catch(error => {
+                console.error('Error placing order:', error);
+                setLoading(true)
+            })
+    }, [])
+
     return (
         <div className='use'>
             <p className='title_text'>
@@ -26,66 +43,12 @@ const Use = () => {
                 Мы используем
             </p>
             <div className="use_contant">
-                <div className="use_box">
-                    <img src={icon1} alt="" />
-                    <p>Java script</p>
-                </div>
-                <div className="use_box">
-                    <img src={icon2} alt="" />
-                    <p>Python</p>
-                </div>
-                <div className="use_box">
-                    <img src={icon3} alt="" />
-                    <p>SQL</p>
-                </div>
-                <div className="use_box">
-                    <img src={icon4} alt="" />
-                    <p>Figma</p>
-                </div>
-                <div className="use_box">
-                    <img src={icon5} alt="" />
-                    <p>Vscode</p>
-                </div>
-                <div className="use_box">
-                    <img src={icon6} alt="" />
-                    <p>CSS</p>
-                </div>
-                <div className="use_box">
-                    <img src={icon7} alt="" />
-                    <p>Html</p>
-                </div>
-                <div className="use_box">
-                    <img src={icon8} alt="" />
-                    <p>Github</p>
-                </div>
-                <div className="use_box">
-                    <img src={icon9} alt="" />
-                    <p>Django</p>
-                </div>
-                <div className="use_box">
-                    <img src={icon10} alt="" />
-                    <p>ReactJs</p>
-                </div>
-                <div className="use_box">
-                    <img src={icon11} alt="" />
-                    <p>NextJs</p>
-                </div>
-                <div className="use_box">
-                    <img src={icon12} alt="" />
-                    <p>Postman</p>
-                </div>
-                <div className="use_box">
-                    <img src={icon13} alt="" />
-                    <p>Pycharm</p>
-                </div>
-                <div className="use_box">
-                    <img src={icon14} alt="" />
-                    <p>Webstorm</p>
-                </div>
-                <div className="use_box">
-                    <img src={icon15} alt="" />
-                    <p>API</p>
-                </div>
+                {loading && useData.map(el =>
+                    <div className="use_box">
+                        <img src={el.logo} alt="" />
+                        <p>{el.title}</p>
+                    </div>
+                )}
             </div>
         </div>
     )

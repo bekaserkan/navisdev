@@ -4,7 +4,7 @@ import axios from 'axios'
 import { url } from '../../Api'
 import Loading from '../UI/Loading/Loading'
 
-const ConsultationComp = ({ setSuccess }) => {
+const ConsultationComp = ({ setSuccess, setModal }) => {
     const [loading, setLoading] = useState(false)
     const [sendData, setSendData] = useState({
         name: "",
@@ -19,6 +19,7 @@ const ConsultationComp = ({ setSuccess }) => {
         axios.post(url + '/Admissions/', sendData)
             .then(response => {
                 if (response.data.response) {
+                    setModal(false)
                     setSuccess(true)
                     setLoading(false)
                     setSendData({
@@ -31,10 +32,8 @@ const ConsultationComp = ({ setSuccess }) => {
             })
             .catch(error => {
                 console.error('Error placing order:', error);
-            })
-            .finally(() => {
                 setLoading(false);
-            });
+            })
     }
 
     return (

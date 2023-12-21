@@ -14,7 +14,7 @@ import ConsultationComp from './components/ConsultationComp/ConsultationComp';
 
 function App() {
   const [modal, setModal] = useState(false)
-  const [success, setSuccess] = useState(true)
+  const [success, setSuccess] = useState(false)
   const location = useLocation()
 
   useEffect(() => {
@@ -29,7 +29,7 @@ function App() {
     <div className="App">
       <div className="container">
         {modal && <Modal setModal={setModal}>
-          <ConsultationComp setSuccess={setSuccess} />
+          <ConsultationComp setSuccess={setSuccess} setModal={setModal} />
         </Modal>}
         {success && <Modal setModal={setSuccess} >
           <div className="modal_success">
