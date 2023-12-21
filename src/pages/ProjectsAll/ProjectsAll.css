@@ -108,6 +108,14 @@
 }
 
 @media (max-width: 600px) {
+    .projects_all .projects_box .image {
+        height: 240px;
+    }
+
+    .projects_all .project_div {
+        height: 240px;
+    }
+
     .projects_all .title {
         margin-top: 80px;
         font-size: 26px;

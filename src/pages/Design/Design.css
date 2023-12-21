@@ -5,7 +5,10 @@
 
 .design .image {
     width: 100%;
+    min-height: 160px;
     max-height: 400px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .design .wrapper {
@@ -58,4 +61,29 @@
     text-decoration: none;
     border-radius: 50px;
     background: rgba(255, 255, 255, 0.10);
+}
+
+@media (max-width: 600px) {
+    .design .wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .design .wrapper_two {
+        display: none;
+    }
+
+    .design .design_title {
+        margin-top: 30px;
+        font-size: 22px;
+        font-weight: 500;
+        color: var(--white);
+    }
+
+    .design .design_text {
+        margin-top: 12px;
+        font-size: 14px;
+        font-weight: 400;
+        color: var(--gray);
+    }
 }

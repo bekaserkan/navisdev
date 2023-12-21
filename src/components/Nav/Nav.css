@@ -118,14 +118,14 @@
         margin-top: 16px;
         width: 90%;
         text-align: center;
-        line-height: 1.4;
+        line-height: 1.2;
         font-size: 30px;
         font-weight: 600;
         color: var(--white);
     }
 
     .nav .nav_text {
-        width: 100%;
+        width: 80%;
         text-align: center;
         margin-top: 20px;
         font-size: 12px;

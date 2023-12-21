@@ -48,8 +48,7 @@
         margin: 0 auto;
         margin-top: 80px;
         margin-bottom: 100px;
-        width: 80%;
-        gap: 15px;
+        width: 100%;
     }
 
     .about_nav .clients .client {
@@ -59,6 +58,7 @@
     }
 
     .about_nav .clients p {
+        text-align: center;
         font-size: 14px;
         font-weight: 400;
         color: var(--gray);

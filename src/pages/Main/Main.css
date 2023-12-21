@@ -16,7 +16,7 @@
 @media (max-width: 600px) {
     .main .title {
         text-align: center;
-        margin-top: 10px;
+        margin-top: 5px;
         font-size: 20px;
         font-weight: 500;
         color: var(--white);
@@ -24,7 +24,7 @@
 
     .main .title_text {
         text-align: center;
-        font-size: 10px;
+        font-size: 12px;
         font-weight: 400;
         color: var(--red);
     }

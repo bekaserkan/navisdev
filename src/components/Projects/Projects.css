@@ -101,6 +101,14 @@
 }
 
 @media (max-width: 600px) {
+    .projects .projects_box .image {
+        height: 240px;
+    }
+
+    .projects .project_div {
+        height: 240px;
+    }
+
     .projects {
         padding: 40px 0;
     }
