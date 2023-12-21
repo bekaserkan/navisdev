@@ -10,7 +10,7 @@ import Review from '../../components/Review/Review'
 import IconCompony from '../../components/IconCompony/IconCompony'
 import Consultation from '../../components/Consultation/Consultation'
 
-const Main = ({ setModal }) => {
+const Main = ({ setModal, setSuccess }) => {
   return (
     <div className='main'>
       <Nav setModal={setModal} />
@@ -21,7 +21,7 @@ const Main = ({ setModal }) => {
       <Use />
       <Review />
       <IconCompony />
-      <Consultation />
+      <Consultation setSuccess={setSuccess} />
     </div>
   )
 }
