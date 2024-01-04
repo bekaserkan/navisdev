@@ -10,7 +10,9 @@
     align-items: center;
     justify-content: space-between;
     background: transparent;
-    background: #0A0A0B;
+    background: rgba(10, 10, 11, 0.20);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(181, 181, 181, 0.2);
     z-index: 9999;
 }
 
