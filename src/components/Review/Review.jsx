@@ -22,8 +22,10 @@ const Review = () => {
 
     return (
         <div className='review'>
-            <p className='title_text'>Отзывы</p>
-            <p className='title'>Благодарности наших клиентов</p>
+            <p className='title'>
+                <p className='title_text'>Отзывы</p>
+                Благодарности наших клиентов
+            </p>
             <div className="review_contant">
                 {loading && reviewData && reviewData.slice(0, 3).map(el =>
                     <div className="review_box">

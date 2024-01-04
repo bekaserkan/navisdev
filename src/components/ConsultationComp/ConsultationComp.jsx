@@ -38,8 +38,10 @@ const ConsultationComp = ({ setSuccess, setModal }) => {
 
     return (
         <div className="block_consultation">
-            <p className='title_text'>Заявка</p>
-            <p className='title'>Получить бесплатную консультацию</p>
+            <p className='title'>
+                <p className='title_text'>Заявка</p>
+                Получить бесплатную консультацию
+            </p>
             <form onSubmit={SendFunc} className='form'>
                 <input value={sendData.name} onChange={(e) => setSendData({ ...sendData, name: e.target.value })} className='input_form' type="text" placeholder='Имя *' required />
                 <input value={sendData.number} onChange={(e) => setSendData({ ...sendData, number: e.target.value })} className='input_form' type="number" placeholder='Номер телефона *' required />

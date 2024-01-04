@@ -1,9 +1,47 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import "./Nav.css"
+import video from "../../img/5196020190_FE46CA8848A26615723F495152E35B97_video_dashinit.mp4"
 
 const Nav = ({ setModal }) => {
+    const videoRef = useRef(null);
+
+    useEffect(() => {
+        const handleVideoEnded = () => {
+            videoRef.current.currentTime = 0;
+            videoRef.current.play();
+        };
+    
+        if (videoRef.current) {
+            videoRef.current.addEventListener('ended', handleVideoEnded);
+    
+            const playPromise = videoRef.current.play();
+    
+            if (playPromise !== undefined) {
+                playPromise.then(() => {}).catch((error) => {
+                    console.log(error);
+                });
+            }
+        }
+    
+        return () => {
+            if (videoRef.current) {
+                videoRef.current.removeEventListener('ended', handleVideoEnded);
+            }
+        };
+    }, []);
+    
+
     return (
         <div className='nav'>
+            <div className="video-container">
+                <video ref={videoRef} muted loop autoPlay>
+                    <source src={video} type="video/mp4" />
+                    Ваш браузер не поддерживает тег video.
+                </video>
+            </div>
+            <div className="video-container bac">
+
+            </div>
             <div className="nav_container">
                 <span className='it_compony'>
                     IT компания

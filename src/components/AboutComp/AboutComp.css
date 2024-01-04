@@ -10,7 +10,11 @@
     width: 100%;
 }
 
-.about_comp .title,
+.about_comp .title{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
 .about_comp .title_text {
     text-align: start !important;
 }

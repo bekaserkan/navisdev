@@ -7,8 +7,10 @@ const AboutComp = () => {
     return (
         <>
             <div className="title_box">
-                <p className='title_text'>Компания</p>
-                <p className='title'>О нас</p>
+                <p className='title'>
+                    <p className='title_text'>Компания</p>
+                    О нас
+                </p>
             </div>
             <div className='about_comp'>
                 <img className='image' src={about_photo} alt="" />

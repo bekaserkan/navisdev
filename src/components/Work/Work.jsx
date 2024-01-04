@@ -4,10 +4,10 @@ import "./Work.css"
 const Work = () => {
     return (
         <div className='work'>
-            <p className="title_text">
-                Этапы
-            </p>
             <p className='title'>
+                <p className="title_text">
+                    Этапы
+                </p>
                 Как мы работаем
             </p>
             <div className="work_contant">

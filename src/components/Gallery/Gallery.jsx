@@ -23,10 +23,10 @@ const Gallery = () => {
         <div className='gallery'>
             {loading && galleryData &&
                 <>
-                    <p className="title_text">
-                        Фотографии
-                    </p>
                     <p className='title'>
+                        <p className="title_text">
+                            Фотографии
+                        </p>
                         Галерея
                     </p>
                     <div className="gallery_box">

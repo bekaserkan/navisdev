@@ -9,6 +9,7 @@ import Use from '../../components/Use/Use'
 import Review from '../../components/Review/Review'
 import IconCompony from '../../components/IconCompony/IconCompony'
 import Consultation from '../../components/Consultation/Consultation'
+import Gallery from '../../components/Gallery/Gallery'
 
 const Main = ({ setModal, setSuccess }) => {
   return (
@@ -16,6 +17,7 @@ const Main = ({ setModal, setSuccess }) => {
       <Nav setModal={setModal} />
       <Services />
       <AboutComp />
+      <Gallery />
       <Work />
       <Projects />
       <Use />

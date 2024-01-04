@@ -13,8 +13,10 @@ const Services = () => {
 
     return (
         <div className='services'>
-            <p className='title_text'>Предоставляем</p>
-            <p className='title'>Наши услуги</p>
+            <p className='title'>
+                <p className='title_text'>Предоставляем</p>
+                Наши услуги
+            </p>
             <div className="services_contant">
                 <div onClick={() => navigate("/design")} className="services_block">
                     <img src={design1} alt="" />

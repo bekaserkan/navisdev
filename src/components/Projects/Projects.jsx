@@ -26,10 +26,10 @@ const Projects = () => {
 
     return (
         <div className='projects'>
-            <p className="title_text">
-                Проекты
-            </p>
-            <p className='title'>Наши Проекты</p>
+            <p className='title'>
+                <p className="title_text">
+                    Проекты
+                </p> Наши Проекты </p>
             <div className="projects_wrapper">
                 {loading && projactsData.slice(0, 6).map(el =>
                     <a href={el.url} target='blank' >

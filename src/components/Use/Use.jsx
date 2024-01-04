@@ -36,10 +36,10 @@ const Use = () => {
 
     return (
         <div className='use'>
-            <p className='title_text'>
-                Инструменты
-            </p>
             <p className='title'>
+                <p className='title_text'>
+                    Инструменты
+                </p>
                 Мы используем
             </p>
             <div className="use_contant">
