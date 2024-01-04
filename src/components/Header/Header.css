@@ -76,10 +76,6 @@
 
 .header .menu {
     position: fixed;
-}
-
-.header .menu {
-    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
