@@ -1,16 +1,20 @@
 import React, { useState } from 'react'
 import "./Header.css"
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import close from "../../img/close_modal.svg"
-import logo from "../../img/Union.svg"
+import logo from "../../img/logo_navis.svg"
 
 const Header = ({ setModal }) => {
     const [menu, setMenu] = useState(false)
+    const navigate = useNavigate()
 
     return (
         <div className='header'>
             <div className="header_container">
-                <NavLink to="/" className="title"><img className='logo' src={logo} alt="" /></NavLink>
+                <div onClick={() => navigate("/")} className="title_div">
+                    <img className='logo' src={logo} alt="" />
+                    <NavLink to="/" className="title">Navisdev </NavLink>
+                </div>
                 <div className="pages">
                     <NavLink to="/directions" className="page">Направления</NavLink>
                     <NavLink to="/projects" className="page">Проекты</NavLink>

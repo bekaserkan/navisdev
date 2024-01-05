@@ -28,7 +28,7 @@ const Review = () => {
             </p>
             <div className="review_contant">
                 {loading && reviewData && reviewData.slice(0, 3).map(el =>
-                    <div className="review_box">
+                    <div data-aos="zoom-in-up" data-aos-duration="1200" className="review_box">
                         <div className="person">
                             {/* <img className='image' src={el.img} alt="" /> */}
                             <div>

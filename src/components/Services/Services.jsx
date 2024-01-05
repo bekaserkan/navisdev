@@ -18,7 +18,7 @@ const Services = () => {
                 Наши услуги
             </p>
             <div className="services_contant">
-                <div onClick={() => navigate("/design")} className="services_block">
+                <div data-aos="fade-up" data-aos-duration="500" onClick={() => navigate("/design")} className="services_block">
                     <img src={design1} alt="" />
                     <h4 className='services_title'>UX/UI дизайн</h4>
                     <p><div className="circle"></div> Анализ конкурентов</p>
@@ -27,7 +27,7 @@ const Services = () => {
                     <p><div className="circle"></div> Создание баннеров</p>
                     <p><div className="circle"></div> Подробка иконок и иллюстраций</p>
                 </div>
-                <div className="services_block">
+                <div data-aos="fade-up" data-aos-duration="1000" className="services_block">
                     <img src={design2} alt="" />
                     <h4 className='services_title'>Веб-сайты</h4>
                     <p><div className="circle"></div> Дизайн</p>
@@ -36,7 +36,7 @@ const Services = () => {
                     <p><div className="circle"></div> Заливание на сервер</p>
                     <p><div className="circle"></div> SEO продвижение</p>
                 </div>
-                <div className="services_block">
+                <div data-aos="fade-up" data-aos-duration="1500" className="services_block">
                     <img src={design3} alt="" />
                     <h4 className='services_title'>Мобильные приложения</h4>
                     <p><div className="circle"></div> Дизайн</p>
@@ -45,7 +45,7 @@ const Services = () => {
                     <p><div className="circle"></div> Адаптика на разные устройства</p>
                     <p><div className="circle"></div> Подробка иконок и иллюстраций</p>
                 </div>
-                <div className="services_block">
+                <div data-aos="fade-up" data-aos-duration="500" className="services_block">
                     <img src={design4} alt="" />
                     <h4 className='services_title'>SEO продвижение</h4>
                     <p><div className="circle"></div> Анализ конкурентов</p>
@@ -54,7 +54,7 @@ const Services = () => {
                     <p><div className="circle"></div> Создание баннеров</p>
                     <p><div className="circle"></div> Подробка иконок и иллюстраций</p>
                 </div>
-                <div className="services_block">
+                <div data-aos="fade-up" data-aos-duration="1000" className="services_block">
                     <img src={design5} alt="" />
                     <h4 className='services_title'>CRM, LMS системы</h4>
                     <p><div className="circle"></div> Анализ конкурентов</p>
@@ -63,7 +63,7 @@ const Services = () => {
                     <p><div className="circle"></div> Создание баннеров</p>
                     <p><div className="circle"></div> Подробка иконок и иллюстраций</p>
                 </div>
-                <div className="services_block">
+                <div data-aos="fade-up" data-aos-duration="1500" className="services_block">
                     <img src={design6} alt="" />
                     <h4 className='services_title'>Blockchain разрабока</h4>
                     <p><div className="circle"></div> Анализ конкурентов</p>

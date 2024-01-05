@@ -11,8 +11,10 @@ import { useEffect, useState } from 'react';
 import Modal from './components/UI/Modal/Modal';
 import check from "./img/success.svg"
 import ConsultationComp from './components/ConsultationComp/ConsultationComp';
+import AOS from 'aos';
 
 function App() {
+  AOS.init();
   const [modal, setModal] = useState(false)
   const [success, setSuccess] = useState(false)
   const location = useLocation()

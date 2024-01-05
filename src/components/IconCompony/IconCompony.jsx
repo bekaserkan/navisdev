@@ -2,10 +2,7 @@ import React, { useEffect, useState } from 'react'
 import "./IconCompony.css"
 import axios from 'axios'
 import { url } from '../../Api'
-import img1 from "../../img/image 1895 (1).svg"
-import img2 from "../../img/image 1896 (1).svg"
-import img3 from "../../img/image 1898 (1).svg"
-import img4 from "../../img/image 1899 (1).svg"
+import Slider from 'react-slick'
 
 const IconCompony = () => {
     const [iconData, setIconData] = useState([])
@@ -23,11 +20,29 @@ const IconCompony = () => {
             })
     }, [])
 
+    const settings = {
+        dots: false,
+        arrows: false,
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        speed: 500,
+        autoplaySpeed: 2000,
+        cssEase: "linear"
+    };
+
     return (
         <div className='icon_compony'>
-            {loading && iconData.map(el =>
-                <img src={el.logo} alt="" />
-            )}
+            <div>
+                <Slider className='slide' {...settings}>
+                    {loading && iconData.map(el =>
+                        <div>
+                            <img src={el.logo} alt="" />
+                        </div>
+                    )}
+                </Slider>
+            </div>
         </div>
     )
 }

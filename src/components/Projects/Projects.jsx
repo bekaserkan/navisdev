@@ -33,7 +33,7 @@ const Projects = () => {
             <div className="projects_wrapper">
                 {loading && projactsData.slice(0, 6).map(el =>
                     <a href={el.url} target='blank' >
-                        <div className="projects_box">
+                        <div data-aos="zoom-in-up" data-aos-duration="1200" className="projects_box">
                             <div className='project_div'>
                                 <img className='image' src={el.image} alt="" />
                             </div>

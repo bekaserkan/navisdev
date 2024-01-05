@@ -1,3 +1,5 @@
+@import 'aos/dist/aos.css';
+
 @font-face {
     font-family: Gilroy;
     src: url("../src/fonts/Gilroy-Black.ttf");
@@ -61,12 +63,11 @@
     margin: 0 auto;
     max-width: 1280px;
     width: 90%;
-} 
+}
 
 :root {
     --orange: linear-gradient(269deg, #D4151C 53.65%, rgba(249, 191, 78, 0.80) 129.43%);
-    --orange: linear-gradient(90deg, rgba(212, 21, 28, 1) 10%, rgba(102, 0, 249, 1) 100%);
-    --orange: linear-gradient(90deg, rgba(212,21,28,1) 10%, rgba(99,66,227,1) 100%);
+    --orange: linear-gradient(90deg, rgba(212, 21, 28, 1) 20%, rgb(129, 107, 255) 100%);
     --orangeH: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), linear-gradient(269deg, #EE3B3B 62.83%, rgba(249, 191, 78, 0.80) 129.43%);
     --orangeH: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), linear-gradient(269deg, #EE3B3B 62.83%, rgba(249, 191, 78, 0.80) 129.43%);
     --red: #D4151C;
@@ -145,7 +146,7 @@
     font-size: 18px;
     font-weight: 400;
     display: inline;
-    background: var(--orange);
+    background: linear-gradient(90deg, rgba(255, 88, 94, 1) 38%, rgba(149, 134, 255, 1) 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

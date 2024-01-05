@@ -44,7 +44,7 @@ const Use = () => {
             </p>
             <div className="use_contant">
                 {loading && useData.map(el =>
-                    <div className="use_box">
+                    <div data-aos="zoom-in-up" data-aos-duration="1000" className="use_box">
                         <img src={el.logo} alt="" />
                         <p>{el.title}</p>
                     </div>

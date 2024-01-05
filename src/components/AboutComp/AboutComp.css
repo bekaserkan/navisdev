@@ -1,4 +1,9 @@
-.about_comp {
+.aboutt {
+    width: 100%;
+    padding: 80px 0;
+}
+
+.aboutt .about_comp {
     width: 100%;
     padding: 80px 0;
     display: grid;
@@ -6,34 +11,115 @@
     gap: 45px;
 }
 
-.about_comp .image {
-    width: 100%;
+.aboutt .flex {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 40px;
+    align-items: center;
 }
 
-.about_comp .title{
+.aboutt .flex img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.aboutt .flex .user {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.aboutt .flex .title_about {
+    font-size: 55px;
+    font-weight: 400;
+    color: var(--white);
+}
+
+.aboutt .box_text,
+.aboutt .flex .user_title {
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--white);
+}
+
+.aboutt .flex .user_text {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--white);
+}
+
+.aboutt .about_gallery {
+    margin-top: 30px;
+    width: 100%;
+    height: 660px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.aboutt .about_gallery .image {
+    height: 100%;
+}
+
+.aboutt .about_gallery .grid {
+    height: 660px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.aboutt .about_gallery .grid_two {
+    height: 660px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.aboutt .about_gallery .grid_two .image {
+    height: 200px;
+}
+
+.aboutt .about_gallery .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.aboutt .about_gallery .image_box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 39px;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 0px 20px;
+}
+
+.aboutt .about_comp .title {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
 }
-.about_comp .title_text {
+
+.aboutt .about_comp .title_text {
     text-align: start !important;
 }
 
-.about_comp .about {
+.aboutt .about_comp .about {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.about_comp .about_text {
+.aboutt .about_comp .about_text {
     width: 75%;
     font-size: 20px;
     font-weight: 400;
     color: var(---, #E1E1E1);
-}
-
-.title_box {
-    display: none;
 }
 
 @media (max-width: 800px) {

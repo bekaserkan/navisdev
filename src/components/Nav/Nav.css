@@ -24,7 +24,7 @@
 .video-container.bac {
     z-index: 2;
     background: rgb(10, 10, 11);
-    background: linear-gradient(0deg, rgba(10, 10, 11, 1) 0%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(0deg, rgba(10, 10, 11, 1) 0%, rgba(0, 0, 0, 0) 80%);
 }
 
 video {
@@ -68,7 +68,7 @@ video {
 }
 
 .nav .product {
-    background: var(--orange);
+    background: var(--red);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -96,6 +96,10 @@ video {
 .nav .btns .cons {
     border: 1px solid var(--gray);
     background: none;
+}
+
+.nav .btns .bay{
+    background: var(--red);
 }
 
 .nav .btns .cons:hover {

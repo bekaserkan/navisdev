@@ -17,7 +17,6 @@ const Main = ({ setModal, setSuccess }) => {
       <Nav setModal={setModal} />
       <Services />
       <AboutComp />
-      <Gallery />
       <Work />
       <Projects />
       <Use />

@@ -11,6 +11,7 @@
 }
 
 .review .review_box {
+    height: 276px;
     padding: 40px;
     border: 1px solid #5C5C5C;
     background: rgba(255, 255, 255, 0.04);
