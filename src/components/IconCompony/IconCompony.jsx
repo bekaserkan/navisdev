@@ -27,22 +27,22 @@ const IconCompony = () => {
         slidesToShow: 4,
         slidesToScroll: 1,
         autoplay: true,
-        speed: 500,
-        autoplaySpeed: 2000,
+        speed: 2000,
+        autoplaySpeed: 1,
         cssEase: "linear"
     };
 
     return (
         <div className='icon_compony'>
-            <div>
+            {loading &&
                 <Slider className='slide' {...settings}>
-                    {loading && iconData.map(el =>
+                    {iconData.map(el =>
                         <div>
-                            <img src={el.logo} alt="" />
+                            <img data-aos="zoom-in-up" data-aos-duration="1000" src={el.logo} alt="" />
                         </div>
                     )}
                 </Slider>
-            </div>
+            }
         </div>
     )
 }

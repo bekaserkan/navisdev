@@ -8,14 +8,11 @@
 }
 
 .icon_compony .slide {
-    max-width: 1280px;
     width: 100%;
 }
 
-.icon_compony .slide div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.icon_compony .slide img {
+    margin: 0 auto;
 }
 
 @media (max-width: 600px) {

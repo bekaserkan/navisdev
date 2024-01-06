@@ -5,7 +5,7 @@ import ConsultationComp from '../ConsultationComp/ConsultationComp'
 
 const Consultation = ({ setSuccess }) => {
     return (
-        <div className='consultation'>
+        <div data-aos="zoom-in-down" data-aos-duration="1000" className='consultation'>
             <img src={photo} alt="" />
             <ConsultationComp setSuccess={setSuccess} />
         </div>

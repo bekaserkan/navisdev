@@ -103,6 +103,7 @@ video {
 }
 
 .nav .btns .cons:hover {
+    border: 1px solid var(--red);
     background: var(--red);
 }
 
