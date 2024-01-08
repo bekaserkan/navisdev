@@ -1,0 +1,185 @@
+.vacancy_detail {
+    padding-top: 140px;
+    width: 100%;
+}
+
+.vacancy_detail .navi {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.vacancy_detail .block {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.vacancy_detail .title_vacancy_detail {
+    font-size: 26px;
+    font-weight: 500;
+    color: var(--gray2, #5C5C5C);
+}
+
+.vacancy_detail .block_wrapper {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+.vacancy_detail .boxs {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.vacancy_detail .block_one {
+    width: 100%;
+    padding: 30px;
+    border: 1px solid var(--gray2, #5C5C5C);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.vacancy_detail .box {
+    width: 100%;
+    height: 320px;
+    padding: 30px;
+    border: 1px solid var(--gray2, #5C5C5C);
+    background: rgba(255, 255, 255, 0.04);
+    cursor: pointer;
+    position: relative;
+    transition: 2.s ease;
+}
+
+.vacancy_detail .box:hover {
+    border: 1px solid rgb(212, 21, 28, 0.5);
+    background: linear-gradient(0deg, rgba(200, 30, 30, 0.10) 0%, rgba(200, 30, 30, 0.10) 100%), rgba(255, 255, 255, 0.04);
+}
+
+.vacancy_detail .box:hover::after {
+    position: absolute;
+    top: 35px;
+    right: 35px;
+    content: url("../../img/arrow.svg");
+}
+
+.vacancy_detail .cate {
+    display: flex;
+    gap: 15px;
+}
+
+.vacancy_detail .cate .level,
+.vacancy_detail .cate .day {
+    padding: 5px 14px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--white);
+    border-radius: 50px;
+}
+
+.vacancy_detail .cate .day {
+    background: rgba(89, 153, 248, 0.20);
+}
+
+.vacancy_detail .cate .level {
+    background: rgba(89, 248, 96, 0.20);
+}
+
+.vacancy_detail .line {
+    width: 40%;
+    height: 1px;
+    background: #cdcdcd7c;
+    margin: 20px 0;
+}
+
+.vacancy_detail .title_box {
+    margin-top: 30px;
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--white);
+}
+
+.vacancy_detail .text_box {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--grayH);
+    height: 92px;
+    overflow: hidden;
+}
+
+.vacancy_detail .title_wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--white);
+}
+
+.vacancy_detail .text_wrapper {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--grayH);
+}
+
+.vacancy_detail ul {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.vacancy_detail li {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--grayH);
+}
+
+.vacancy_detail .form {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.vacancy_detail .title_box.t {
+    margin-top: 10px;
+}
+
+.vacancy_detail button {
+    width: 100%;
+}
+
+.vacancy_detail .form .input_form {
+    outline: none;
+    padding: 16px 20px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--white);
+    border-radius: 50px;
+    background: transparent;
+    border-radius: 50px;
+    border: 1px solid var(--gray, #B5B5B5);
+}
+
+.vacancy_detail .form .input_form:focus {
+    border: 1px solid var(--red);
+}
+
+.vacancy_detail .form .input_form::placeholder {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--gray);
+}
+
+.vacancy_detail .link {
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--red);
+}

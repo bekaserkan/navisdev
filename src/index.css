@@ -67,11 +67,12 @@
 
 :root {
     --orange: linear-gradient(269deg, #D4151C 53.65%, rgba(249, 191, 78, 0.80) 129.43%);
-    --orange: linear-gradient(90deg, rgba(212, 21, 28, 1) 20%, rgb(129, 107, 255) 100%);
+    /* --orange: linear-gradient(90deg, rgba(212, 21, 28, 1) 20%, rgb(129, 107, 255) 100%); */
     --orangeH: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), linear-gradient(269deg, #EE3B3B 62.83%, rgba(249, 191, 78, 0.80) 129.43%);
     --orangeH: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), linear-gradient(269deg, #EE3B3B 62.83%, rgba(249, 191, 78, 0.80) 129.43%);
     --red: #D4151C;
     --gray: #B5B5B5;
+    --grayH: #E1E1E1;
     --white: #fff;
 }
 
@@ -111,7 +112,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: var(--red);
+    background-color: #cdcdcd;
     border-radius: 6px;
     transition: background-color 0.3s;
     cursor: pointer;
@@ -166,5 +167,41 @@
         font-size: 12px;
         font-weight: 400;
         color: var(--red);
+    }
+}
+
+.advanced-cursor {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: 2px solid var(--red);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: exclusion;
+    transition: background-color 0.3s ease-out;
+}
+
+.advanced-cursor::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, var(--red) 10%, transparent 80%);
+    border-radius: 50%;
+    animation: ripple 2s infinite;
+    pointer-events: none;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(2);
+        opacity: 0;
     }
 }
