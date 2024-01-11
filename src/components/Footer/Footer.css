@@ -6,10 +6,14 @@
     padding-bottom: 20px;
 }
 
+.footer .footer_box{
+    width: 250px;
+}
+
 .footer .footer_block {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 100px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .footer .footer_box .footer_title {

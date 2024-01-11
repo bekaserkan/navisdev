@@ -3,6 +3,10 @@
     width: 100%;
 }
 
+.vacancy_detail .navi_link {
+    cursor: pointer;
+}
+
 .vacancy_detail .navi {
     display: flex;
     align-items: center;
@@ -182,4 +186,82 @@
     font-size: 16px;
     font-weight: 400;
     color: var(--red);
+}
+
+@media (max-width: 600px) {
+    .vacancy_detail {
+        padding-top: 100px;
+    }
+
+    .vacancy_detail .block_wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .vacancy_detail .block_two {
+        display: none;
+    }
+
+    .vacancy_detail .title_box {
+        margin-top: 30px;
+        font-size: 16px;
+    }
+
+    .vacancy_detail .text_box {
+        font-size: 14px;
+        color: var(--grayH);
+        height: 92px;
+        overflow: hidden;
+    }
+
+    .vacancy_detail .title_wrapper {
+        font-size: 16px;
+    }
+
+    .vacancy_detail .text_wrapper {
+        margin-top: 20px;
+        font-size: 14px;
+        font-weight: 300;
+        color: var(--grayH);
+    }
+
+    .vacancy_detail ul {
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+
+    .vacancy_detail li {
+        font-size: 14px;
+        font-weight: 300;
+        color: var(--grayH);
+    }
+
+    .vacancy_detail .title_vacancy_detail {
+        font-size: 20px;
+    }
+
+    .vacancy_detail .form {
+        margin-top: 32px;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .vacancy_detail .form .input_form {
+        padding: 10px 16px;
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .vacancy_detail .title_box {
+        font-size: 20px;
+    }
+
+    .vacancy_detail .block_one {
+        padding: 24px;
+    }
+
+    .vacancy_detail .title_text {
+        display: flex;
+        justify-content: center;
+    }
 }

@@ -10,6 +10,7 @@ import Review from '../../components/Review/Review'
 import IconCompony from '../../components/IconCompony/IconCompony'
 import Consultation from '../../components/Consultation/Consultation'
 import Gallery from '../../components/Gallery/Gallery'
+import Shorts from '../../components/Shorts/Shorts'
 
 const Main = ({ setModal, setSuccess }) => {
   return (
@@ -20,6 +21,7 @@ const Main = ({ setModal, setSuccess }) => {
       <Work />
       <Projects />
       <Use />
+      <Shorts />
       <Review />
       <IconCompony />
       <Consultation setSuccess={setSuccess} />

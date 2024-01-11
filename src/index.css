@@ -67,6 +67,7 @@
 
 :root {
     --orange: linear-gradient(269deg, #D4151C 53.65%, rgba(249, 191, 78, 0.80) 129.43%);
+    --orange: linear-gradient(45deg, rgba(212, 21, 28, 1) 0%, rgba(211, 84, 0, 1) 100%);
     /* --orange: linear-gradient(90deg, rgba(212, 21, 28, 1) 20%, rgb(129, 107, 255) 100%); */
     --orangeH: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), linear-gradient(269deg, #EE3B3B 62.83%, rgba(249, 191, 78, 0.80) 129.43%);
     --orangeH: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), linear-gradient(269deg, #EE3B3B 62.83%, rgba(249, 191, 78, 0.80) 129.43%);
@@ -154,7 +155,7 @@
 }
 
 @media (max-width: 600px) {
-    .main .title {
+    .title {
         text-align: center;
         margin-top: 5px;
         font-size: 20px;
@@ -162,7 +163,7 @@
         color: var(--white);
     }
 
-    .main .title_text {
+    .title_text {
         text-align: center;
         font-size: 12px;
         font-weight: 400;

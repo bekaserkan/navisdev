@@ -9,11 +9,10 @@
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 40px;
 }
 
 .work .work_box {
-    width: 280px;
+    width: 250px;
     display: flex;
     flex-direction: column;
     align-items: center;

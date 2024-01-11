@@ -29,6 +29,8 @@
 .event .boxs .box .image {
     width: 100%;
     height: 220px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .event .boxs .box:hover {
@@ -101,4 +103,60 @@
     font-size: 16px;
     font-weight: 400;
     color: var(--gray);
+}
+
+
+@media (max-width: 600px) {
+    .event {
+        padding-top: 100px;
+    }
+
+    .event .boxs {
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .event .boxs .box {
+        width: 100%;
+        height: 480px;
+        padding: 20px;
+    }
+
+    .event .categoryes {
+        margin-top: 20px;
+        gap: 10px;
+    }
+
+    .event .title_box {
+        margin-top: 24px;
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    .event .text_box {
+        font-size: 14px;
+        font-weight: 300;
+        height: 88px;
+        overflow: hidden;
+    }
+
+    .event .boxs .box .image {
+        width: 100%;
+        height: 160px;
+    }
+
+    .event .detail {
+        margin-top: 14px;
+    }
+
+    .event .flex {
+        gap: 12px;
+        font-size: 14px;
+    }
+
+    .event .line {
+        margin: 16px 0;
+    }
 }

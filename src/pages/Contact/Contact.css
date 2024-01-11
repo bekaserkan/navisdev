@@ -68,7 +68,7 @@
     height: 60px;
 }
 
-.contact .text{
+.contact .text {
     font-size: 16px;
     font-weight: 400;
     color: var(--gray);
@@ -134,13 +134,19 @@
         display: flex;
         align-items: center;
         gap: 12px;
-        font-size: 14px;
+        font-size: 22px;
         font-weight: 400;
-        color: var(--gray);
+        color: var(--white);
     }
 }
 
 @media (max-width: 600px) {
+    .contact .block {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
     .contact .title {
         text-align: center;
         margin-top: 5px;
@@ -154,5 +160,25 @@
         font-size: 12px;
         font-weight: 400;
         color: var(--red);
+    }
+
+    .contact .address_text img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .contact .address {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding-top: 0px;
+    }
+
+    .contact .image_box {
+        margin-top: 40px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
     }
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./VacancyDetail.css"
 import { useNavigate } from 'react-router-dom'
 import align from "../../img/align-text-left-one.svg"
@@ -6,9 +6,45 @@ import check from "../../img/check-small.svg"
 import handbag from "../../img/handbag.svg"
 import cooperative from "../../img/cooperative-handshake.svg"
 import file from "../../img/file-addition.svg"
+import axios from 'axios'
+import { url } from '../../Api'
+import Loading from '../../components/UI/Loading/Loading'
 
-const VacancyDetail = () => {
+const VacancyDetail = ({ setSuccess }) => {
     const navigate = useNavigate()
+    const [loading, setLoading] = useState(false)
+    const [sendData, setSendData] = useState({
+        name: "",
+        number: "",
+        email: "",
+        link: "",
+        file: null
+    })
+
+    const SendFunc = (e) => {
+        e.preventDefault();
+        setLoading(true)
+
+        axios.post(url + '/application', sendData)
+            .then(response => {
+                if (response.data.response) {
+                    setSuccess(true)
+                    setLoading(false)
+                    setSendData({
+                        ...sendData,
+                        name: "",
+                        number: "",
+                        email: "",
+                        link: "",
+                        file: null
+                    })
+                }
+            })
+            .catch(error => {
+                console.error('Error placing order:', error);
+                setLoading(false);
+            })
+    }
 
     return (
         <div className='vacancy_detail'>
@@ -67,19 +103,28 @@ const VacancyDetail = () => {
                     <div data-aos="fade-up" data-aos-duration="1500" className="block_one">
                         <p className='title_text'>Заявка</p>
                         <p className='title_box t'> Оставьте свои данные для отклика</p>
-                        <div className="form">
-                            <input className='input_form' type="text" placeholder='Имя' />
-                            <input className='input_form' type="text" placeholder='Номер телефона' />
-                            <input className='input_form' type="text" placeholder='Электронная почта' />
-                            <input className='input_form' type="text" placeholder='Ссылка на соцсеть(Linkedin)' />
-                        </div>
-                        <div className="link">
-                            <img src={file} alt="" />
-                            Прикрепить файл
-                        </div>
-                        <button className='button_form'>
-                            Отправить
-                        </button>
+                        <form onSubmit={SendFunc}>
+                            <div className="form">
+                                <input value={sendData.name} onChange={(e) => setSendData({ ...sendData, name: e.target.value })} required className='input_form' type="text" placeholder='Имя' />
+                                <input value={sendData.number} onChange={(e) => setSendData({ ...sendData, number: e.target.value })} required className='input_form' type="number" placeholder='Номер телефона' />
+                                <input value={sendData.email} onChange={(e) => setSendData({ ...sendData, email: e.target.value })} required className='input_form' type="email" placeholder='Электронная почта' />
+                                <input value={sendData.link} onChange={(e) => setSendData({ ...sendData, link: e.target.value })} required className='input_form' type="text" placeholder='Ссылка на соцсеть(Linkedin)' />
+                            </div>
+                            <label>
+                                <div className="link">
+                                    <img src={file} alt="" />
+                                    {sendData.file == null ? "Прикрепить файл" : sendData.file}
+                                </div>
+                                <input
+                                    type="file"
+                                    onChange={(e) => setSendData({ ...sendData, file: e.target.value })}
+                                    style={{ display: "none" }}
+                                />
+                            </label>
+                            <button disabled={loading} onSubmit={SendFunc} className='button_form'>
+                                {loading ? <Loading /> : "Отправить"}
+                            </button>
+                        </form>
                     </div>
                 </div>
                 <div data-aos="fade-left" data-aos-duration="1500" className="block_two">

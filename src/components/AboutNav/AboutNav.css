@@ -1,6 +1,6 @@
 .about_nav {
     width: 100%;
-    padding-top: 110px;
+    padding-top: 140px;
     padding-bottom: 80px;
 }
 
@@ -47,7 +47,7 @@
     .about_nav .clients {
         margin: 0 auto;
         margin-top: 80px;
-        margin-bottom: 100px;
+        margin-bottom: 40px;
         width: 100%;
     }
 

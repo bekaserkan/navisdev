@@ -36,6 +36,7 @@
 .aboutt .flex .title_about {
     font-size: 55px;
     font-weight: 400;
+    line-height: 1;
     color: var(--white);
 }
 
@@ -55,7 +56,7 @@
 .aboutt .about_gallery {
     margin-top: 30px;
     width: 100%;
-    height: 660px;
+    min-height: 660px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
@@ -66,21 +67,16 @@
 }
 
 .aboutt .about_gallery .grid {
-    height: 660px;
+    min-height: 660px;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
 .aboutt .about_gallery .grid_two {
-    height: 660px;
+    min-height: 660px;
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
     gap: 20px;
-}
-
-.aboutt .about_gallery .grid_two .image {
-    height: 200px;
 }
 
 .aboutt .about_gallery .image {
@@ -168,5 +164,81 @@
         margin-top: 20px;
         padding: 10px;
     }
+}
 
+.aboutt .about_gallery.block {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .aboutt {
+        padding: 40px 0;
+    }
+
+    .aboutt .about_gallery.block {
+        display: block;
+    }
+
+    .aboutt .image.max {
+        height: 240px;
+    }
+
+    .aboutt .about_gallery.none {
+        display: none;
+    }
+
+    .aboutt .flex {
+        margin-top: 10px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+        align-items: center;
+    }
+
+    .aboutt .flex .title_about {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 1;
+        color: var(--white);
+    }
+
+    .aboutt .box_text,
+    .aboutt .flex .user_title {
+        font-size: 16px;
+        font-weight: 400;
+        color: var(--white);
+    }
+
+    .aboutt .flex .user_text {
+        font-size: 14px;
+        font-weight: 300;
+        color: var(--white);
+    }
+
+    .about .user {
+        gap: 12px;
+    }
+
+    .aboutt .flex img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .aboutt .about_gallery {
+        margin-top: 30px;
+        width: 100%;
+        min-height: 660px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .aboutt .about_gallery .grid {
+        min-height: 160px;
+        height: 160px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin: 10px 0;
+    }
 }

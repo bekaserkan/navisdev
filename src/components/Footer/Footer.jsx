@@ -6,15 +6,17 @@ import phone_number from "../../img/phone_number.svg"
 import icon1 from "../../img/iocn_footer1.svg"
 import icon2 from "../../img/iocn_footer2.svg"
 import icon3 from "../../img/iocn_footer3.svg"
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 
 const Footer = () => {
+    const navigate = useNavigate()
+
     return (
         <div className='footer'>
             <div className="container">
                 <div className="footer_block">
                     <div className="footer_box">
-                        <p className='footer_title'>
+                        <p onClick={() => navigate("/")} className='footer_title'>
                             Navisdev
                         </p>
                         <p className='text'>Наша компания
@@ -26,9 +28,11 @@ const Footer = () => {
                             Компания
                         </p>
                         <div className="text_box">
-                            <NavLink to="/directions" className='text'>Направления</NavLink>
+                            {/* <NavLink to="/directions" className='text'>Направления</NavLink> */}
+                            <NavLink to="/about" className='text'>О нас</NavLink>
                             <NavLink to="/projects" className='text'>Проекты</NavLink>
-                            <NavLink to="/about" className='text'>Партенеры</NavLink>
+                            <NavLink to="/vacancy" className="text">Вакансии</NavLink>
+                            <NavLink to="/event" className="text">Мероприятия</NavLink>
                             <NavLink to="/review" className='text'>Отзывы</NavLink>
                             <NavLink to="/contact" className='text'>Контакты</NavLink>
                         </div>

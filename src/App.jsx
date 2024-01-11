@@ -54,7 +54,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Main setModal={setModal} setSuccess={setSuccess} />} />
           <Route path='vacancy' element={<Vacancy />} />
-          <Route path='vacancy-detail/:id' element={<VacancyDetail />} />
+          <Route path='vacancy-detail/:id' element={<VacancyDetail setSuccess={setSuccess} />} />
           <Route path='event' element={<Event />} />
           <Route path='about' element={<About />} />
           <Route path='event-detail/:id' element={<EventDetail />} />

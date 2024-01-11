@@ -22,7 +22,7 @@ const Work = () => {
                     <div className="circle_div">2</div>
                     <p className='work_title'>Договор</p>
                     <p className='work_text'>На основе анализа и
-                        ƒпожеланий клиента, составляем ТЗ,
+                        пожеланий клиента, составляем ТЗ,
                         и согласуем стоимость</p>
                 </div>
                 <div data-aos="fade-up" data-aos-duration="1500" className='work_box'>
