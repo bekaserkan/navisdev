@@ -106,7 +106,7 @@ const Shorts = () => {
                 </div>
               </div>
               {reals.map((el) => (
-                el.url === real.url ? "" : (
+                el.id === real.id ? "" : (
                   <div key={el.id}>
                     <div className="short_box">
                       <video ref={videoRef} muted loop autoPlay onClick={() => setPouse(!pouse)}>

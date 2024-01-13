@@ -29,21 +29,23 @@ const VacancyDetail = ({ setSuccess }) => {
         axios.get(url + `/Vacancy/${id}`)
             .then((response) => {
                 setVacancyDetail(response.data)
-                setLoading(false)
             })
             .catch((error) => {
                 console.log(error);
-                setLoading(false)
             })
         axios.get(url + "/Vacancy")
             .then((response) => {
                 setVacancy(response.data)
                 document.title = response.data[0].site_title
-                setLoading(false)
+                if (vacancyDetail) {
+                    setLoading(false)
+                }
             })
             .catch((error) => {
                 console.log(error);
-                setLoading(false)
+                if (vacancyDetail) {
+                    setLoading(false)
+                }
             })
     }, [id])
 
