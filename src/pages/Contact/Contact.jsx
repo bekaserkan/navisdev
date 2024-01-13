@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./Contact.css"
 import address from "../../img/address.svg"
 import email from "../../img/email.svg"
@@ -12,6 +12,10 @@ import icon5 from "../../img/you.svg"
 import ConsultationComp from '../../components/ConsultationComp/ConsultationComp'
 
 const Contact = () => {
+    useEffect(() => {
+        document.title = "Контакты"
+    }, [])
+
     return (
         <div className='contact'>
             <p className="contact_title">

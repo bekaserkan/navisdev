@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./Main.css"
 import Nav from '../../components/Nav/Nav'
 import Services from '../../components/Services/Services'
@@ -13,6 +13,10 @@ import Gallery from '../../components/Gallery/Gallery'
 import Shorts from '../../components/Shorts/Shorts'
 
 const Main = ({ setModal, setSuccess }) => {
+  useEffect(() => {
+    document.title = "Главная"
+  }, [])
+
   return (
     <div className='main'>
       <Nav setModal={setModal} />
@@ -21,7 +25,6 @@ const Main = ({ setModal, setSuccess }) => {
       <Work />
       <Projects />
       <Use />
-      <Shorts />
       <Review />
       <IconCompony />
       <Consultation setSuccess={setSuccess} />

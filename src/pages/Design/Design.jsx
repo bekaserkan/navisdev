@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./Design.css"
 import design_photo from "../../img/baner_design.svg"
 import ui from "../../img/ui.svg"
@@ -6,6 +6,10 @@ import wireframe from "../../img/wireframe.svg"
 import { NavLink } from 'react-router-dom'
 
 const Design = () => {
+    useEffect(() => {
+        document.title = "Дизайн"
+    }, [])
+
     return (
         <div className='design'>
             <img className='image' src={design_photo} alt="" />

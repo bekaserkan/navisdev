@@ -168,6 +168,10 @@
         height: 72px;
     }
 
+    .header .logo {
+        height: 30px;
+    }
+
     .header .page {
         height: 72px;
     }

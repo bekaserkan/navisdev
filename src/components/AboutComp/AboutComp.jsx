@@ -60,8 +60,9 @@ const AboutComp = () => {
                     <div data-aos="zoom-in" data-aos-duration="1000">
                         <img style={{ height: location.pathname !== "/about" && "200px" }} className='image max' src={about_photo} alt="" />
                     </div>
-                    <div data-aos="zoom-in" data-aos-duration="1000" className='grid'>
-                        <img className='image' src={about_photo} alt="" />                        {location.pathname !== "/about" && <div data-aos="zoom-in" data-aos-duration="1000" className='image_box'>
+                    <div style={{ display: location.pathname == "/about" && "flex" }} data-aos="zoom-in" data-aos-duration="1000" className='grid'>
+                        <img className='image' src={about_photo} alt="" />
+                        {location.pathname !== "/about" && <div data-aos="zoom-in" data-aos-duration="1000" className='image_box'>
                             <p className="box_text">
                                 Больше о Navisdev
                             </p>

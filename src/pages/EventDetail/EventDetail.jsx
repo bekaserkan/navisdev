@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./EventDetail.css"
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import align from "../../img/align-text-left-one.svg"
 import check from "../../img/check-small.svg"
 import handbag from "../../img/handbag.svg"
@@ -10,9 +10,38 @@ import photo from "../../img/photo_team.svg"
 import calendar from "../../img/calendar-three.svg"
 import address from "../../img/address.svg"
 import time from "../../img/time.svg"
+import axios from 'axios'
+import { url } from '../../Api'
+import Loading from '../../components/UI/Loading/Loading'
 
 const EventDetail = () => {
+  const { id } = useParams()
+  const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
+  const [event, setEvent] = useState([])
+  const [eventDetail, setEventDetail] = useState([])
+
+  useEffect(() => {
+    axios.get(url + `/events/${id}`)
+      .then((response) => {
+        setEventDetail(response.data)
+        setLoading(false)
+      })
+      .catch((error) => {
+        console.log(error);
+        setLoading(false)
+      })
+    axios.get(url + "/events")
+      .then((response) => {
+        setEvent(response.data)
+        document.title = response.data[0].site_title
+        setLoading(false)
+      })
+      .catch((error) => {
+        console.log(error);
+        setLoading(false)
+      })
+  }, [])
 
   return (
     <div className='event_detail'>
@@ -23,116 +52,80 @@ const EventDetail = () => {
         </svg>
         <p className='title_event_detail'>Мероприятия</p>
       </div>
-      <div className="block_wrapper">
-        <div data-aos="fade-up" data-aos-duration="1000" className='block'>
-          <div className="block_one">
-            <div className="cate">
-              <img className='image r' src={photo} alt="" />
-            </div>
-            <p className="title_box">Middle Frontend разработчик  </p>
-            <div className="line"></div>
-            <p className='title_wrapper'> <img src={align} alt="" /> Описание</p>
-            <p className='text_wrapper'>IT Студия Nevisdev - это динамично развивающаяся компания, специализирующаяся на создании высококачественных веб-приложений и решений. Мы ищем опытного Middle Python Developer, который присоединится к нашей команде и поможет нам достичь новых высот в сфере веб-разработки.
-              Если вы готовы внести свой вклад в развитие IT Студии Motion Web LLC и у вас есть необходимые навыки, не стесняйтесь связаться с нами! Мы ждем именно вас, чтобы вместе создавать инновационные и успешные веб-приложения.
-              Пожалуйста, отправьте ваше резюме и сопроводительное письмо на адрес motionwebteam@gmail.com указанием "Middle Python Developer" в теме письма. Мы свяжемся с вами для дальнейшего обсуждения и собеседования.
-              Мы с нетерпением ждем ваших заявок!</p>
-            <p className='title_wrapper'> <img src={handbag} alt="" /> Требования</p>
-            <ul>
-              <li>Разработка и поддержка бэкенд части проектов с использованием</li>
-              <li>Python и Django REST Framework.</li>
-              <li>Контейнеризация приложений с использованием Docker и управление контейнерами с помощью Docker Compose.</li>
-              <li>Настройка Nginx для обеспечения безопасной и высокопроизводительной работы веб-приложений, включая подключение SSL-сертификатов.ƒ</li>
-              <li>Активное участие в командной разработке и работа с системой контроля версий Git.</li>
-              <li>Развертывание и управление приложениями на платформе AWS.</li>
-              <li>Работа с тестовым стендом и написание тестов (включая unit и integration tests).</li>
-            </ul>
-            <div className="detail">
-              <div className="flex">
-                <img src={calendar} alt="" />
-                <p>31.12.2023</p>
-              </div>
-              <div className="flex">
-                <img src={time} alt="" />
-                <p>10:00</p>
-              </div>
-              <div className="flex">
-                <img src={address} alt="" />
-                <p>г. Бишкек, ул. Манас 60/1</p>
-              </div>
-            </div>
-          </div>
+      {loading ?
+        <div className="loading_div">
+          <Loading />
         </div>
-        <div className="block_two">
-          <div data-aos="fade-left" data-aos-duration="1500" className="boxs">
-            <div onClick={() => navigate("/event-detail/1")} className="box">
+        :
+        <div className="block_wrapper">
+          <div data-aos="fade-up" data-aos-duration="1000" className='block'>
+            <div className="block_one">
               <div className="cate">
-                <img className='image' src={photo} alt="" />
+                <img className='image r' src={eventDetail.img} alt="" />
               </div>
-              <p className="title_box">Middle Frontend разработчик  </p>
+              <p className="title_box">{eventDetail.title}</p>
               <div className="line"></div>
-              <p className='text_box'>Наша компания осуществляет свою деятельность на территории Кыргызстана всей Центральной Азии, оказывая услуги по разработке, внедрению и дальнейшему. оказывая </p>
+              <p className='title_wrapper'> <img src={align} alt="" /> Описание</p>
+              <p className='text_wrapper'>
+                {React.createElement("p", {
+                  dangerouslySetInnerHTML: {
+                    __html: eventDetail.detail ? eventDetail.detail : "",
+                  },
+                })}</p>
+              <p className='title_wrapper'> <img src={handbag} alt="" /> Требования</p>
+              <ul>
+                {React.createElement("li", {
+                  dangerouslySetInnerHTML: {
+                    __html: eventDetail.requirement ? eventDetail.requirement : "",
+                  },
+                })}
+              </ul>
               <div className="detail">
                 <div className="flex">
                   <img src={calendar} alt="" />
-                  <p>31.12.2023</p>
+                  <p>{eventDetail.data}</p>
                 </div>
                 <div className="flex">
                   <img src={time} alt="" />
-                  <p>10:00</p>
+                  <p>{eventDetail.time}</p>
                 </div>
                 <div className="flex">
                   <img src={address} alt="" />
-                  <p>г. Бишкек, ул. Манас 60/1</p>
-                </div>
-              </div>
-            </div>
-            <div className="box">
-              <div className="cate">
-                <img className='image' src={photo} alt="" />
-              </div>
-              <p className="title_box">Middle Frontend разработчик  </p>
-              <div className="line"></div>
-              <p className='text_box'>Наша компания осуществляет свою деятельность на территории Кыргызстана всей Центральной Азии, оказывая услуги по разработке, внедрению и дальнейшему. оказывая </p>
-              <div className="detail">
-                <div className="flex">
-                  <img src={calendar} alt="" />
-                  <p>31.12.2023</p>
-                </div>
-                <div className="flex">
-                  <img src={time} alt="" />
-                  <p>10:00</p>
-                </div>
-                <div className="flex">
-                  <img src={address} alt="" />
-                  <p>г. Бишкек, ул. Манас 60/1</p>
-                </div>
-              </div>
-            </div>
-            <div className="box">
-              <div className="cate">
-                <img className='image' src={photo} alt="" />
-              </div>
-              <p className="title_box">Middle Frontend разработчик  </p>
-              <div className="line"></div>
-              <p className='text_box'>Наша компания осуществляет свою деятельность на территории Кыргызстана всей Центральной Азии, оказывая услуги по разработке, внедрению и дальнейшему. оказывая </p>
-              <div className="detail">
-                <div className="flex">
-                  <img src={calendar} alt="" />
-                  <p>31.12.2023</p>
-                </div>
-                <div className="flex">
-                  <img src={time} alt="" />
-                  <p>10:00</p>
-                </div>
-                <div className="flex">
-                  <img src={address} alt="" />
-                  <p>г. Бишкек, ул. Манас 60/1</p>
+                  <p>{eventDetail.location}</p>
                 </div>
               </div>
             </div>
           </div>
+          <div className="block_two">
+            <div data-aos="fade-left" data-aos-duration="1500" className="boxs">
+              {event.map(el =>
+                <div data-aos="zoom-in-up" data-aos-duration="1000" onClick={() => navigate(`/event-detail/${el.id}`)} className="box">
+                  <div className="cate">
+                    <img className='image' src={el.img} alt="" />
+                  </div>
+                  <p className="title_box">{el.title}</p>
+                  <div className="line"></div>
+                  <p className='text_box'>{el.detail}</p>
+                  <div className="detail">
+                    <div className="flex">
+                      <img src={calendar} alt="" />
+                      <p>{el.data}</p>
+                    </div>
+                    <div className="flex">
+                      <img src={time} alt="" />
+                      <p>{el.time}</p>
+                    </div>
+                    <div className="flex">
+                      <img src={address} alt="" />
+                      <p>{el.location}</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
         </div>
-      </div>
+      }
     </div>
   )
 }

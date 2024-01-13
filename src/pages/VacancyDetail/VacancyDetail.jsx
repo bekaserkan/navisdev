@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./VacancyDetail.css"
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import align from "../../img/align-text-left-one.svg"
 import check from "../../img/check-small.svg"
 import handbag from "../../img/handbag.svg"
@@ -12,7 +12,10 @@ import Loading from '../../components/UI/Loading/Loading'
 
 const VacancyDetail = ({ setSuccess }) => {
     const navigate = useNavigate()
-    const [loading, setLoading] = useState(false)
+    const { id } = useParams()
+    const [vacancyDetail, setVacancyDetail] = useState([])
+    const [vacancy, setVacancy] = useState([])
+    const [loading, setLoading] = useState(true)
     const [sendData, setSendData] = useState({
         name: "",
         number: "",
@@ -20,6 +23,29 @@ const VacancyDetail = ({ setSuccess }) => {
         link: "",
         file: null
     })
+
+    useEffect(() => {
+        setLoading(true)
+        axios.get(url + `/Vacancy/${id}`)
+            .then((response) => {
+                setVacancyDetail(response.data)
+                setLoading(false)
+            })
+            .catch((error) => {
+                console.log(error);
+                setLoading(false)
+            })
+        axios.get(url + "/Vacancy")
+            .then((response) => {
+                setVacancy(response.data)
+                document.title = response.data[0].site_title
+                setLoading(false)
+            })
+            .catch((error) => {
+                console.log(error);
+                setLoading(false)
+            })
+    }, [id])
 
     const SendFunc = (e) => {
         e.preventDefault();
@@ -55,110 +81,101 @@ const VacancyDetail = ({ setSuccess }) => {
                 </svg>
                 <p className='title_vacancy_detail'>Вакансии</p>
             </div>
-            <div className="block_wrapper">
-                <div data-aos="fade-up" data-aos-duration="1000" className='block'>
-                    <div className="block_one">
-                        <div className="cate">
-                            <div className="day">Полный рабочий день</div>
-                            <div className="level">Middle</div>
-                        </div>
-                        <p className="title_box">Middle Frontend разработчик  </p>
-                        <div className="line"></div>
-                        <p className='title_wrapper'> <img src={align} alt="" /> Описание</p>
-                        <p className='text_wrapper'>IT Студия Nevisdev - это динамично развивающаяся компания, специализирующаяся на создании высококачественных веб-приложений и решений. Мы ищем опытного Middle Python Developer, который присоединится к нашей команде и поможет нам достичь новых высот в сфере веб-разработки.
-                            Если вы готовы внести свой вклад в развитие IT Студии Motion Web LLC и у вас есть необходимые навыки, не стесняйтесь связаться с нами! Мы ждем именно вас, чтобы вместе создавать инновационные и успешные веб-приложения.
-                            Пожалуйста, отправьте ваше резюме и сопроводительное письмо на адрес motionwebteam@gmail.com указанием "Middle Python Developer" в теме письма. Мы свяжемся с вами для дальнейшего обсуждения и собеседования.
-                            Мы с нетерпением ждем ваших заявок!</p>
-                        <p className='title_wrapper'> <img src={check} alt="" /> Обязанности</p>
-                        <ul>
-                            <li>Разработка и поддержка бэкенд части проектов с использованием</li>
-                            <li>Python и Django REST Framework.</li>
-                            <li>Контейнеризация приложений с использованием Docker и управление контейнерами с помощью Docker Compose.</li>
-                            <li>Настройка Nginx для обеспечения безопасной и высокопроизводительной работы веб-приложений, включая подключение SSL-сертификатов.ƒ</li>
-                            <li>Активное участие в командной разработке и работа с системой контроля версий Git.</li>
-                            <li>Развертывание и управление приложениями на платформе AWS.</li>
-                            <li>Работа с тестовым стендом и написание тестов (включая unit и integration tests).</li>
-                        </ul>
-                        <p className='title_wrapper'> <img src={handbag} alt="" /> Требования</p>
-                        <ul>
-                            <li>Разработка и поддержка бэкенд части проектов с использованием</li>
-                            <li>Python и Django REST Framework.</li>
-                            <li>Контейнеризация приложений с использованием Docker и управление контейнерами с помощью Docker Compose.</li>
-                            <li>Настройка Nginx для обеспечения безопасной и высокопроизводительной работы веб-приложений, включая подключение SSL-сертификатов.ƒ</li>
-                            <li>Активное участие в командной разработке и работа с системой контроля версий Git.</li>
-                            <li>Развертывание и управление приложениями на платформе AWS.</li>
-                            <li>Работа с тестовым стендом и написание тестов (включая unit и integration tests).</li>
-                        </ul>
-                        <p className='title_wrapper'> <img src={cooperative} alt="" /> Условия работы</p>
-                        <ul>
-                            <li>Разработка и поддержка бэкенд части проектов с использованием</li>
-                            <li>Python и Django REST Framework.</li>
-                            <li>Контейнеризация приложений с использованием Docker и управление контейнерами с помощью Docker Compose.</li>
-                            <li>Настройка Nginx для обеспечения безопасной и высокопроизводительной работы веб-приложений, включая подключение SSL-сертификатов.ƒ</li>
-                            <li>Активное участие в командной разработке и работа с системой контроля версий Git.</li>
-                            <li>Развертывание и управление приложениями на платформе AWS.</li>
-                            <li>Работа с тестовым стендом и написание тестов (включая unit и integration tests).</li>
-                        </ul>
-                    </div>
-                    <div data-aos="fade-up" data-aos-duration="1500" className="block_one">
-                        <p className='title_text'>Заявка</p>
-                        <p className='title_box t'> Оставьте свои данные для отклика</p>
-                        <form onSubmit={SendFunc}>
-                            <div className="form">
-                                <input value={sendData.name} onChange={(e) => setSendData({ ...sendData, name: e.target.value })} required className='input_form' type="text" placeholder='Имя' />
-                                <input value={sendData.number} onChange={(e) => setSendData({ ...sendData, number: e.target.value })} required className='input_form' type="number" placeholder='Номер телефона' />
-                                <input value={sendData.email} onChange={(e) => setSendData({ ...sendData, email: e.target.value })} required className='input_form' type="email" placeholder='Электронная почта' />
-                                <input value={sendData.link} onChange={(e) => setSendData({ ...sendData, link: e.target.value })} required className='input_form' type="text" placeholder='Ссылка на соцсеть(Linkedin)' />
+            {loading ?
+                <div className="loading_div">
+                    <Loading />
+                </div>
+                :
+                <div className="block_wrapper">
+                    <div data-aos="fade-up" data-aos-duration="1000" className='block'>
+                        <div className="block_one">
+                            <div className="cate">
+                                <div className="day">{vacancyDetail.work_time}</div>
+                                <div className="level">{vacancyDetail.level}</div>
                             </div>
-                            <label>
-                                <div className="link">
-                                    <img src={file} alt="" />
-                                    {sendData.file == null ? "Прикрепить файл" : sendData.file}
+                            <p className="title_box">{vacancyDetail.title}</p>
+                            <div className="line"></div>
+                            <p className='title_wrapper'> <img src={align} alt="" /> Описание</p>
+                            <p className='text_wrapper'>{vacancyDetail.detail}</p>
+                            <p className='title_wrapper'> <img src={check} alt="" /> Обязанности</p>
+                            <ul>
+                                {React.createElement("li", {
+                                    dangerouslySetInnerHTML: {
+                                        __html: vacancyDetail.responsibilyties ? vacancyDetail.responsibilyties : "",
+                                    },
+                                })}
+                            </ul>
+                            <p className='title_wrapper'> <img src={handbag} alt="" /> Требования</p>
+                            <ul>
+                                {React.createElement("li", {
+                                    dangerouslySetInnerHTML: {
+                                        __html: vacancyDetail.text ? vacancyDetail.text : "",
+                                    },
+                                })}
+                            </ul>
+                            <p className='title_wrapper'> <img src={cooperative} alt="" /> Условия работы</p>
+                            <ul>
+                                {React.createElement("li", {
+                                    dangerouslySetInnerHTML: {
+                                        __html: vacancyDetail.condition ? vacancyDetail.condition : "",
+                                    },
+                                })}
+                            </ul>
+                        </div>
+                        <div data-aos="fade-up" data-aos-duration="1500" className="block_one">
+                            <p className='title_text'>Заявка</p>
+                            <p className='title_box t'> Оставьте свои данные для отклика</p>
+                            <form onSubmit={SendFunc}>
+                                <div className="form">
+                                    <input value={sendData.name} onChange={(e) => setSendData({ ...sendData, name: e.target.value })} required className='input_form' type="text" placeholder='Имя' />
+                                    <input value={sendData.number} onChange={(e) => setSendData({ ...sendData, number: e.target.value })} required className='input_form' type="number" placeholder='Номер телефона' />
+                                    <input value={sendData.email} onChange={(e) => setSendData({ ...sendData, email: e.target.value })} required className='input_form' type="email" placeholder='Электронная почта' />
+                                    <input value={sendData.link} onChange={(e) => setSendData({ ...sendData, link: e.target.value })} required className='input_form' type="text" placeholder='Ссылка на соцсеть(Linkedin)' />
                                 </div>
-                                <input
-                                    type="file"
-                                    onChange={(e) => setSendData({ ...sendData, file: e.target.value })}
-                                    style={{ display: "none" }}
-                                />
-                            </label>
-                            <button disabled={loading} onSubmit={SendFunc} className='button_form'>
-                                {loading ? <Loading /> : "Отправить"}
-                            </button>
-                        </form>
-                    </div>
-                </div>
-                <div data-aos="fade-left" data-aos-duration="1500" className="block_two">
-                    <div className="boxs">
-                        <div onClick={() => navigate("/vacancy-detail/1")} className="box">
-                            <div className="cate">
-                                <div className="day">Полный рабочий день</div>
-                                <div className="level">Middle</div>
-                            </div>
-                            <p className="title_box">Middle Frontend разработчик  </p>
-                            <div className="line"></div>
-                            <p className='text_box'>Наша компания осуществляет свою деятельность на территории Кыргызстана всей Центральной Азии, оказывая услуги по разработке, внедрению и дальнейшему. оказывая </p>
-                        </div>
-                        <div className="box">
-                            <div className="cate">
-                                <div className="day">Полный рабочий день</div>
-                                <div className="level">Middle</div>
-                            </div>
-                            <p className="title_box">Middle Frontend разработчик  </p>
-                            <div className="line"></div>
-                            <p className='text_box'>Наша компания осуществляет свою деятельность на территории Кыргызстана всей Центральной Азии, оказывая услуги по разработке, внедрению и дальнейшему. оказывая </p>
-                        </div>
-                        <div className="box">
-                            <div className="cate">
-                                <div className="day">Полный рабочий день</div>
-                                <div className="level">Middle</div>
-                            </div>
-                            <p className="title_box">Middle Frontend разработчик  </p>
-                            <div className="line"></div>
-                            <p className='text_box'>Наша компания осуществляет свою деятельность на территории Кыргызстана всей Центральной Азии, оказывая услуги по разработке, внедрению и дальнейшему. оказывая </p>
+                                <label>
+                                    <div className="link">
+                                        <img src={file} alt="" />
+                                        {sendData.file == null ? "Прикрепить файл" : sendData.file}
+                                    </div>
+                                    <input
+                                        type="file"
+                                        onChange={(e) => setSendData({ ...sendData, file: e.target.value })}
+                                        style={{ display: "none" }}
+                                    />
+                                </label>
+                                <button disabled={loading} onSubmit={SendFunc} className='button_form'>
+                                    {loading ? <Loading /> : "Отправить"}
+                                </button>
+                            </form>
                         </div>
                     </div>
+                    <div data-aos="fade-left" data-aos-duration="1500" className="block_two">
+                        <div className="boxs">
+                            {vacancy.filter(obj => {
+                                return vacancyDetail.direction == obj.direction
+                            }).map(el =>
+                                <div data-aos="zoom-in-up" data-aos-duration="1000" onClick={() => navigate(`/vacancy-detail/${el.id}`)} className="box">
+                                    <div className="cate">
+                                        <div className="day">
+                                            {el.work_time}
+                                        </div>
+                                        <div className="level">{el.level}</div>
+                                    </div>
+                                    <p className="title_box">{el.title}</p>
+                                    <div className="line"></div>
+                                    <p className='text_box'>
+                                        {React.createElement("p", {
+                                            dangerouslySetInnerHTML: {
+                                                __html: el.detail ? el.detail : "",
+                                            },
+                                        })}
+                                    </p>
+                                </div>
+                            )}
+                        </div>
+                    </div>
                 </div>
-            </div>
+            }
         </div>
     )
 }
