@@ -45,7 +45,7 @@ const Header = ({ setModal }) => {
             <div className="header_container">
                 <div onClick={() => navigate("/")} className="title_div">
                     <img className='logo' src={logo} alt="" />
-                    <NavLink to="/" className="title">Navisdev </NavLink>
+                    <NavLink to="/" className="title">Navisdevs </NavLink>
                 </div>
                 <div className="pages">
                     <NavLink to="/about" className="page">О нас</NavLink>

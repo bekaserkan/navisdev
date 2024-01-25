@@ -17,7 +17,7 @@ const Footer = () => {
                 <div className="footer_block">
                     <div className="footer_box">
                         <p onClick={() => navigate("/")} className='footer_title'>
-                            Navisdev
+                            Navisdevs
                         </p>
                         <p className='text'>Наша компания
                             осуществляет свою деятельность на
