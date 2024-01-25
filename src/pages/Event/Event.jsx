@@ -15,7 +15,7 @@ const Event = () => {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        axios.get(url + "/events")
+        axios.get(url + "/events/")
             .then((response) => {
                 setEvent(response.data)
                 document.title = response.data[0].site_title
@@ -39,7 +39,7 @@ const Event = () => {
                 :
                 <div className="boxs">
                     {event.slice(0, 3).map(el =>
-                        <div data-aos="zoom-in-up" data-aos-duration="1000" onClick={() => navigate(`/event-detail/${el.id}`)} className="box">
+                        <div data-aos="zoom-in-up" data-aos-duration="1000" onClick={() => navigate(`/event-detail/${el.slug}`)} className="box">
                             <div className="cate">
                                 <img className='image' src={el.img} alt="" />
                             </div>

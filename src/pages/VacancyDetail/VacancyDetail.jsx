@@ -156,7 +156,7 @@ const VacancyDetail = ({ setSuccess }) => {
                             {vacancy.filter(obj => {
                                 return vacancyDetail.direction == obj.direction
                             }).map(el =>
-                                <div data-aos="zoom-in-up" data-aos-duration="1000" onClick={() => navigate(`/vacancy-detail/${el.id}`)} className="box">
+                                <div data-aos="zoom-in-up" data-aos-duration="1000" onClick={() => navigate(`/vacancy-detail/${el.slug}`)} className="box">
                                     <div className="cate">
                                         <div className="day">
                                             {el.work_time}

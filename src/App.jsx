@@ -59,7 +59,7 @@ function App() {
           <Route path='about' element={<About />} />
           <Route path='event-detail/:id' element={<EventDetail />} />
           <Route path='contact' element={<Contact />} />
-          <Route path='design' element={<Design />} />
+          <Route path='services/:slug' element={<Design />} />
           <Route path='projects' element={<ProjectsAll />} />
           <Route path='*' element={<div className='not_found'>
             <p className='not_found_text'>

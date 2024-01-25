@@ -99,7 +99,7 @@ const EventDetail = () => {
           <div className="block_two">
             <div data-aos="fade-left" data-aos-duration="1500" className="boxs">
               {event.map(el =>
-                <div data-aos="zoom-in-up" data-aos-duration="1000" onClick={() => navigate(`/event-detail/${el.id}`)} className="box">
+                <div data-aos="zoom-in-up" data-aos-duration="1000" onClick={() => navigate(`/event-detail/${el.slug}`)} className="box">
                   <div className="cate">
                     <img className='image' src={el.img} alt="" />
                   </div>

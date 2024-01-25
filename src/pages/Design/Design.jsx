@@ -1,74 +1,80 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Design.css"
-import design_photo from "../../img/baner_design.svg"
-import ui from "../../img/ui.svg"
-import wireframe from "../../img/wireframe.svg"
-import { NavLink } from 'react-router-dom'
+import { NavLink, useParams } from 'react-router-dom'
+import axios from 'axios'
+import { url } from '../../Api'
+import Loading from '../../components/UI/Loading/Loading'
 
 const Design = () => {
+    const slug = useParams()
+    const [services, setServices] = useState([])
+    const [serviceDetail, setServicesDetail] = useState([])
+    const [loading, setLoading] = useState(true)
+
     useEffect(() => {
-        document.title = "Дизайн"
+        axios.get(url + `/service/${slug.slug}`)
+            .then((response) => {
+                setServicesDetail(response.data)
+                axios.get(url + "/service/")
+                    .then((response) => {
+                        setServices(response.data)
+                        setLoading(false)
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                        setLoading(false)
+                    })
+            })
+            .catch((error) => {
+                console.log(error);
+                setLoading(false)
+            })
+    }, [slug])
+
+    useEffect(() => {
+
     }, [])
+
+
 
     return (
         <div className='design'>
-            <img className='image' src={design_photo} alt="" />
-            <div className="wrapper">
-                <div className="wrapper_one">
-                    <p className="design_title">
-                        Разработка дизайна в Nevisdevs
-                    </p>
-                    <p className='design_text'>
-                        Дизайн – это не только красота, но и удобство. Можно сделать красивый сайт, пользоваться которым будет трудно. Посетители будут уходить с него, ничего не покупая (а цель любого коммерческого сайта – способствовать продажам).
-                        Дизайн – это не только красота, но и удобство. Можно сделать красивый сайт, пользоваться которым будет трудно. Посетители будут уходить с него, ничего не покупая (а цель любого коммерческого сайта – способствовать продажам).
-                    </p>
-                    <p className="design_title">
-                        Анализ конкурентов
-                    </p>
-                    <p className='design_text'>
-                        Дизайн – это не только красота, но и удобство. Можно сделать красивый сайт, пользоваться которым будет трудно. Посетители будут уходить с него, ничего не покупая (а цель любого коммерческого сайта – способствовать продажам).
-                        Дизайн – это не только красота, но и удобство. Можно сделать красивый сайт, пользоваться которым будет трудно. Посетители будут уходить с него, ничего не покупая (а цель любого коммерческого сайта – способствовать продажам).
-                    </p>
-                    <p className="design_title">
-                        Создание вайрфрейма
-                    </p>
-                    <img className='design_photo' src={wireframe} alt="" />
-                    <p className='design_text'>
-                        Дизайн – это не только красота, но и удобство. Можно сделать красивый сайт, пользоваться которым будет трудно. Посетители будут уходить с него, ничего не покупая (а цель любого коммерческого сайта – способствовать продажам).
-                        Дизайн – это не только красота, но и удобство. Можно сделать красивый сайт, пользоваться которым будет трудно. Посетители будут уходить с него, ничего не покупая (а цель любого коммерческого сайта – способствовать продажам).
-                    </p>
-                    <p className="design_title">
-                        Добавление UI(шрифт, цвет, иконки)
-                    </p>
-                    <img className='design_photo' src={ui} alt="" />
-                    <p className='design_text'>
-                        Дизайн – это не только красота, но и удобство. Можно сделать красивый сайт, пользоваться которым будет трудно. Посетители будут уходить с него, ничего не покупая (а цель любого коммерческого сайта – способствовать продажам).
-                        Дизайн – это не только красота, но и удобство. Можно сделать красивый сайт, пользоваться которым будет трудно. Посетители будут уходить с него, ничего не покупая (а цель любого коммерческого сайта – способствовать продажам).
-                    </p>
+            {loading ?
+                <div className="loading_div">
+                    <Loading />
                 </div>
-                <div className="wrapper_two">
-                    <p className='wrapper_title'>
-                        Наши услуги
-                    </p>
-                    <div className="wrapper_box">
-                        <NavLink className="page" to="">
-                            Веб-сайты
-                        </NavLink>
-                        <NavLink className="page" to="">
-                            Мобильные приложения
-                        </NavLink>
-                        <NavLink className="page" to="">
-                            SEO продвижение
-                        </NavLink>
-                        <NavLink className="page" to="">
-                            CRM, LMC системы
-                        </NavLink>
-                        <NavLink className="page" to="">
-                            Blockchain разработка
-                        </NavLink>
+                :
+                <>
+                    <img className='image' src={serviceDetail.image} alt="" />
+                    <div className="wrapper">
+                        <div className="wrapper_one">
+                            {serviceDetail?.service?.map(el =>
+                                <>
+                                    <p className="design_title">
+                                        {el.name}
+                                    </p>
+                                    <img className='design_photo' src={el.img} alt="" />
+                                    <p className='design_text'>
+                                        {el.description}
+                                    </p>
+                                </>
+                            )}
+                        </div>
+                        <div className="wrapper_two">
+                            <p className='wrapper_title'>
+                                Наши услуги
+                            </p>
+                            <div className="wrapper_box">
+                                {services.map(el =>
+                                    <NavLink className="page" to={`/services/${el.slug}`}>
+                                        {el.title}
+                                    </NavLink>
+                                )}
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
+                </>
+            }
         </div>
     )
 }

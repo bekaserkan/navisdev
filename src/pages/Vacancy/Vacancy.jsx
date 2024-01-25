@@ -12,7 +12,7 @@ const Vacancy = () => {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        axios.get(url + "/Vacancy")
+        axios.get(url + "/Vacancy/")
             .then((response) => {
                 setVacancy(response.data)
                 document.title = response.data[0].site_title
@@ -23,8 +23,6 @@ const Vacancy = () => {
                 setLoading(false)
             })
     }, [])
-
-    console.log(vacancy);
 
     return (
         <div className='vacancy'>
@@ -45,7 +43,7 @@ const Vacancy = () => {
                     {vacancy.filter(obj => {
                         return cate == obj.direction
                     }).map(el =>
-                        <div data-aos="zoom-in-up" data-aos-duration="1000" onClick={() => navigate(`/vacancy-detail/${el.id}`)} className="box">
+                        <div data-aos="zoom-in-up" data-aos-duration="1000" onClick={() => navigate(`/vacancy-detail/${el.slug}`)} className="box">
                             <div className="cate">
                                 <div className="day">
                                     {el.work_time}

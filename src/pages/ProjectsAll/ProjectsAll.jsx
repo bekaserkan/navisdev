@@ -16,7 +16,7 @@ const ProjectsAll = () => {
         axios.get(url + "/Project/")
             .then((response) => {
                 setProjactsData(response.data)
-                document.title = response.data[0].site_title
+                document.title = response?.data[0]?.site_title
                 setLoading(false);
             })
             .catch(error => {
@@ -24,6 +24,8 @@ const ProjectsAll = () => {
                 setLoading(false);
             })
     }, [])
+
+    console.log(projactsData);
 
     return (
         <div className='projects_all'>
@@ -34,7 +36,7 @@ const ProjectsAll = () => {
                 </div>
                 :
                 <div className="projects_wrapper">
-                    {loading && projactsData.map(el =>
+                    {projactsData.map(el =>
                         <a href={el.url} target='blank' >
                             <div data-aos="zoom-in-up" data-aos-duration="1200" className="projects_box">
                                 <div className='project_div'>
